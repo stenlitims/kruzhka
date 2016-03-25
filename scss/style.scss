@@ -1,10 +1,19 @@
 @import "bourbon";
+@import "fonts";
 
-$color : '#fff';
+$color: '#fff';
+body {
+    color: $color;
+    font-size: 12px;
+}
 
-body{
-   color: $color 
+a{
+    color: #fff;
 }
 
 
-        
+
+@import "responsive";
+
+
+
