@@ -1,8 +1,11 @@
 @media all and (max-width: 1200px) and (min-width: 768px) {
 }
 @media (max-width: 1500px) {
-    .home .container{
+    .home .content .container{
         width: 1428px;
+    }
+    .container{
+        width: 1200px;
     }
 }
 @media (max-width: 1400px) {}
