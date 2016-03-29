@@ -8,6 +8,8 @@
     <title>Template</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/perfect-scrollbar.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,10 +29,10 @@
                     <div class="logo">
                         <a href="#"><img src="images/logo.png" alt=""></a>
                     </div>
-                    <div class="main-nav">
+                    <div class="main-nav" aria-expanded="false">
                         <ul>
                             <li>
-                                <a href="#">Адреса</a>
+                                <a href="#"><i class="fa fa-map-marker"></i> Адреса</a>
                             </li>
                             <li class="active">
                                 <a href="#">Блюда и напитки</a>
@@ -49,6 +51,12 @@
                             </li>
                         </ul>
                     </div>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a href="#" class="btn btn-bron">забронировать столик</a>
                 </div>
             </div>
@@ -59,11 +67,397 @@
                 <a href="#"><img src="images/events/1.jpg" alt=""></a>
                 <a href="#"><img src="images/events/1.jpg" alt=""></a>
             </div>
+            <div class="list">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="num">48</div>
+                            <div class="text">
+                                ресторанов
+                                <br><a href="#">в москве <i class="fa fa-caret-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="num">154</div>
+                            <div class="text">
+                                позиций
+                                <br><a href="#">в меню <i class="fa fa-caret-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="num">1128</div>
+                            <div class="text">
+                                проведенных
+                                <br><a href="#">мероприятий <i class="fa fa-caret-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="num">560</div>
+                            <div class="text">
+                                футбольных
+                                <br><a href="#">трансляций <i class="fa fa-caret-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </header>
 
         <div class="content">
+            <div class="container">
+                <div class="row main-row">
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#" class="info-item">
+                            <div class="title">еда и напитки</div>
+                            <div class="icons">
+                                <i class="ico ico-kruzka"></i>
+                                <i class="ico ico-pizza"></i>
+                            </div>
+                            <div class="text">
+                                <p><b>Более 250 коктейлей</b> на любой вкус и градус. Высшая миксология разбудит нервные клетки и заправит высококачественным тонусом до конца безбашенной ночи.</p>
+                            </div>
+                            <div class="arr"><i class="fa fa-caret-right"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#" class="info-item">
+                            <div class="title">бизнес-ланчи</div>
+                            <div class="icons">
+                                <i class="ico ico-time-menu"></i>
+                                <i class="ico ico-nozh-vilka"></i>
+                            </div>
+                            <div class="text">
+                                <p>Мы радуем гостей круглосуточно замечательными блюдами. В меню - завтраки, ланчи, специальные предложения для любых вечеринок!</p>
+                            </div>
+                            <div class="arr"><i class="fa fa-caret-right"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="calendar-item">
+                            <div class="title">
+                                <a href="#" class="arr-left"><i class="fa fa-caret-left"></i></a>
+                                <span>ТРАНСЛЯЦИИ НА ЯНВАРЬ 2016</span>
+                                <a href="#" class="arr-right"><i class="fa fa-caret-right"></i></a>
+                            </div>
+                            <div class="calendar-table">
+                                <table class="table">
+                                    <tr>
+                                        <th>ПН</th>
+                                        <th>ВТ</th>
+                                        <th>СР</th>
+                                        <th>ЧТ</th>
+                                        <th>ПТ</th>
+                                        <th>СБ</th>
+                                        <th>ВС</th>
+                                    </tr>
+                                    <tr>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td>30</td>
+                                        <td class="cur">1</td>
+                                        <td class="cur">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cur">3</td>
+                                        <td class="cur">4</td>
+                                        <td class="cur">5</td>
+                                        <td class="cur">6</td>
+                                        <td class="cur">7</td>
+                                        <td class="cur">8</td>
+                                        <td class="cur">9</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cur">10</td>
+                                        <td class="cur">11</td>
+                                        <td class="cur">
+                                            <div class="ev active">12</div>
+                                        </td>
+                                        <td class="cur">
+                                            <div class="ev">13</div>
+                                        </td>
+                                        <td class="cur">14</td>
+                                        <td class="cur">
+                                            <div class="ev">15</div>
+                                        </td>
+                                        <td class="cur">16</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cur">17</td>
+                                        <td class="cur">18</td>
+                                        <td class="cur">19</td>
+                                        <td class="cur">20</td>
+                                        <td class="cur">21</td>
+                                        <td class="cur">22</td>
+                                        <td class="cur">23</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cur">24</td>
+                                        <td class="cur">25</td>
+                                        <td class="cur">26</td>
+                                        <td class="cur">27</td>
+                                        <td class="cur">28</td>
+                                        <td class="cur">29</td>
+                                        <td class="cur">30</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cur">31</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#" class="event-item">
+                            <div class="img" style="background: url(images/footbol.jpg)"></div>
+                            <div class="info">
+                                <div class="live">live</div>
+                                <div class="text">
+                                    <div class="title">ЗЕНИТ-ВАЛЕНСИЯ</div>
+                                    <div class="time"><i class="fa fa-clock-o"></i> Вт, 24 Ноября в 20:00</div>
+                                </div>
+                                <div class="arr"><i class="fa fa-caret-right"></i></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row main-row">
+                    <div class="col-md-6">
+                        <div class="carousel">
+                            <div class="item">
+                                <div class="img" style="background-image: url(images/carousel/1.jpg)"></div>
+                                <div class="title">ВЕЧЕРИНКИ</div>
+                                <div class="info">
+                                    <div class="date"><i class="fa fa-clock-o"></i> суббота 21 февраля</div>
+                                    <a href="#"><i class="fa fa-camera"></i> <span>245</span></a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img" style="background-image: url(images/carousel/1.jpg)"></div>
+                                <div class="title">ВЕЧЕРИНКИ</div>
+                                <div class="info">
+                                    <div class="date"><i class="fa fa-clock-o"></i> суббота 21 февраля</div>
+                                    <a href="#"><i class="fa fa-camera"></i> <span>245</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="bl-img" style="background-image: url(images/bludo.jpg)"></div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="carousel">
+                            <div class="menu-item">
+                                <div class="ac">акция</div>
+                                <div class="icons">
+                                    <i class="ico ico-kruzhka-mini"></i>
+                                    <i class="ico ico-vilka-lozhka"></i>
+                                </div>
+                                <div class="title">суп+салат + напиток</div>
+                                <div class="price">99 <span>РУБ</span></div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="ac">акция</div>
+                                <div class="icons">
+                                    <i class="ico ico-kruzhka-mini"></i>
+                                    <i class="ico ico-vilka-lozhka"></i>
+                                </div>
+                                <div class="title">суп+салат + напиток</div>
+                                <div class="price">99 <span>РУБ</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row main-row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="item-maps">
+                            <div class="map">
+                                <div class="img" style="background-image: url(images/map1.jpg)"></div>
+                                <div class="text-mask">
+                                    <div class="title">КАРТА ГОРОДА</div>
+                                    <div class="arr"><i class="fa fa-caret-right"></i></div>
+                                </div>
+                            </div>
+                            <div class="map map2">
+                                <div class="img" style="background-image: url(images/map2.jpg)"></div>
+                                <div class="text-mask">
+                                    <div class="title">СХЕМА
+                                        <br>МЕТРО</div>
+                                    <div class="arr"><i class="fa fa-caret-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#" class="info-item">
+                            <div class="title">ЕДА С СОБОЙ</div>
+                            <div class="icons">
+                                <i class="ico ico-chashka"></i>
+                                <i class="ico ico-stakan"></i>
+                            </div>
+                            <div class="text">
+                                <p>Можно взять еду с собой в удобной упаковке! В меню - завтраки, ланчи, специальные предложения для любых вечеринок!</p>
+                            </div>
+                            <div class="arr"><i class="fa fa-caret-right"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#" class="info-item">
+                            <div class="title">развлечения</div>
+                            <div class="icons">
+                                <i class="ico ico-pazl"></i>
+                                <i class="ico ico-gitara"></i>
+                            </div>
+                            <div class="text">
+                                <p>Настольные игры и всякие фишки.В меню - завтраки, ланчи, специальные предложения для любых вечеринок!</p>
+                            </div>
+                            <div class="arr"><i class="fa fa-caret-right"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="#" class="info-item press-item">
+                            <div class="title">о нас в прессе</div>
+                            <div class="title2">Коммерсант.ru</div>
+                            <div class="text">
+                                <p>Клуб, который работает 7 дней в неделю. Здесь шторм из децибелов лучшей музыки во вселенной окажет реанимацию сердцу и мозгу. А вихрь танца утянет за собой....</p>
+                            </div>
+                            <div class="arr"><i class="fa fa-caret-right"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row main-row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="info-item scheme-item">
+                            <div class="title">Схемы залов</div>
+                            <a href="#" class="search"><i class="fa fa-search"></i></a>
+                            <ul class="list-sch nl">
+                                <li><a href="#">ул. Лескова, 3Г</a></li>
+                                <li><a href="#">Ленинградский пр-т., 66</a></li>
+                                <li><a href="#">Кудринская площадь, 1</a></li>
+                                <li><a href="#">ул. Братиславская,12</a></li>
+                                <li><a href="#">ул. Куликовская, 1а</a></li>
+                                <li><a href="#">ул. Лескова, 3Г</a></li>
+                                <li><a href="#">Ленинградский пр-т., 66</a></li>
+                                <li><a href="#">Кудринская площадь, 1</a></li>
+                                <li><a href="#">ул. Братиславская,12</a></li>
+                                <li><a href="#">ул. Куликовская, 1а</a></li>
+                            </ul>
 
+                            <a href="#" class="btn btn-border">забронировать столик</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="info-item doska-item">
+                            <div class="title">Доска объявлений</div>
+                            <div class="doska-user clearfix">
+                                <div class="user-img"><img src="images/user-img.jpg" alt=""></div>
+                                <div class="info">
+                                    <div class="name">Мария, 25 лет</div>
+                                    <div class="soc">
+                                        <a href="#"><i class="fa fa-vk"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">Ищу парня с седыми волосами, возраста 25 лет, познакомились у барной стойки...</div>
+
+                            <a href="#" class="btn">все объявления</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="carousel">
+                            <div class="item">
+                                <div class="img" style="background-image: url(images/personal.jpg)"></div>
+                                <div class="title">Персонал</div>
+                                <div class="info">
+                                    <div class="date"><i class="fa fa-map-marker"></i> ул. тверская д.2</div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="img" style="background-image: url(images/personal.jpg)"></div>
+                                <div class="title">Персонал</div>
+                                <div class="info">
+                                    <div class="date"><i class="fa fa-map-marker"></i> ул. тверская д.2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
+
+
+        <footer class="footer">
+            <div class="brands-list">
+                <a href="#"><img src="images/brand/1.png" alt=""></a>
+                <a href="#"><img src="images/brand/2.png" alt=""></a>
+                <a href="#"><img src="images/brand/3.png" alt=""></a>
+                <a href="#"><img src="images/brand/4.png" alt=""></a>
+                <a href="#"><img src="images/brand/5.png" alt=""></a>
+                <a href="#"><img src="images/brand/6.png" alt=""></a>
+            </div>
+
+            <div class="ver-img-list">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+                <img src="images/img-list.jpg" alt="">
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-7">
+                        <div class="footer-nav">
+                            <ul>
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#"> работа</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">бронирование</a></li>
+                                <li><a href="#">франчайзинг</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">реклама</a></li>
+                                <li><a href="#">доставка</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5">
+                        <div class="footer-soc">
+                            <a href="#"><i class="fa fa-vk"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                        <div class="copy">© 2015 сеть пивных ресторанов «Кружка»</div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-contact">
+                            <div class="phone">+7 (495) 411 94 45</div>
+                            <a href="#">написать нам</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-sport"></div>
+        </footer>
+
+
+
 
     </div>
 
@@ -72,6 +466,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

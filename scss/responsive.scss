@@ -1,20 +1,81 @@
-@media all and (max-width: 1200px) and (min-width: 768px) {
-}
-@media (max-width: 1500px) {
-    .home .content .container{
-        width: 1428px;
+@media all and (max-width: 1200px) and (min-width: 992px) {
+    .header .logo {
+        margin-right: 20px;
     }
-    .container{
-        width: 1200px;
+    .header .btn-bron {
+        font-size: 12px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .main-nav ul li {
+        font-size: 14px;
+        margin: 0 8px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+@media (min-width: 1500px) {
+    .home {
+        .content,
+        .list {
+            .container {
+                width: 1428px;
+            }
+        }
+    }
+    .container {
+        width: 1300px;
     }
 }
 @media (max-width: 1400px) {}
 @media (max-width: 1200px) {
-  
+    .main-nav.collapse {
+        display: block;
+    }
 }
 @media (max-width: 992px) {
-
+    .footer-contact{
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .top-line {
+        position: relative;
+    }
+    .main-nav {
+        visibility: hidden;
+        position: absolute;
+        z-index: 20;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        padding-bottom: 10px;
+        top: 88px;
+        background: rgba(0, 0, 0, 0.3);
+        ul li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+    .collapse.in {
+        visibility: visible;
+    }
+    .home .slogon {
+        margin-top: -240px;
+        &:before {
+            bottom: -73px;
+        }
+    }
 }
-@media (max-width: 768px) {
-  
+.footer-sport{
+    margin-top: 30px;
+    padding: 28px 0;
+    height: 128px;
+    background: #F4F4F4 url(../images/sports.jpg) repeat-x center;
 }
+@media (max-width: 768px) {}
