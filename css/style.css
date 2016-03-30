@@ -188,6 +188,10 @@ a:focus {
     .home .list .text .fa {
       margin-left: 3px; }
 
+.home .content .container-fluid {
+  padding-left: 0;
+  padding-right: 0; }
+
 .header {
   font-size: 15px; }
   .header .logo {
@@ -308,7 +312,8 @@ a.btn:focus {
       font-family: "Acrom";
       margin-bottom: 20px; }
     .main-row .info-item .text {
-      line-height: 1.6; }
+      line-height: 1.6;
+      height: 72px; }
     .main-row .info-item .icons {
       margin-bottom: 32px; }
       .main-row .info-item .icons .ico {
@@ -558,7 +563,8 @@ a.btn:focus {
     color: #000;
     text-transform: uppercase;
     left: 50px;
-    top: 125px; }
+    top: 125px;
+    max-width: 300px; }
   .menu-item .price {
     position: absolute;
     bottom: 24px;
@@ -751,7 +757,23 @@ a.btn:focus {
     .main-nav ul li:first-child {
       margin-left: 0; }
     .main-nav ul li:last-child {
-      margin-right: 0; } }
+      margin-right: 0; }
+  .main-row .info-item {
+    padding: 40px 20px; }
+  .main-row .calendar-item {
+    padding-top: 40px; }
+  .main-row .event-item .info .text,
+  .main-row .event-item .info .live,
+  .main-row .item-maps .map .title,
+  .main-row .menu-item .title {
+    left: 20px; }
+  .main-row .scheme-item .list-sch {
+    margin-right: -10px; }
+  .main-row .scheme-item .btn-border {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .home .events {
+    right: -150px; } }
 
 @media (min-width: 1500px) {
   .home .content .container,
@@ -762,7 +784,11 @@ a.btn:focus {
 
 @media (max-width: 1200px) {
   .main-nav.collapse {
-    display: block; } }
+    display: block; }
+  .btn {
+    font-size: 13px; }
+  .main-row .info-item .text {
+    line-height: 1.4; } }
 
 @media (max-width: 992px) {
   .footer-contact {

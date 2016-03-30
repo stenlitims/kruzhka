@@ -17,6 +17,33 @@
             margin-right: 0;
         }
     }
+    .main-row {
+        .info-item {
+            padding: 40px 20px;
+            .ico {}
+        }
+        .calendar-item {
+            padding-top: 40px;
+        }
+        .event-item .info .text,
+        .event-item .info .live,
+        .item-maps .map .title,
+        .menu-item .title {
+            left: 20px;
+        }
+        .scheme-item {
+            .list-sch {
+                margin-right: -10px;
+            }
+            .btn-border {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    .home .events{
+        right: -150px;
+    }
 }
 @media (min-width: 1500px) {
     .home {
@@ -36,9 +63,17 @@
     .main-nav.collapse {
         display: block;
     }
+    .btn {
+        font-size: 13px;
+    }
+    .main-row {
+        .info-item .text {
+            line-height: 1.4;
+        }
+    }
 }
 @media (max-width: 992px) {
-    .footer-contact{
+    .footer-contact {
         float: none;
     }
     .navbar-toggle {
@@ -72,7 +107,7 @@
         }
     }
 }
-.footer-sport{
+.footer-sport {
     margin-top: 30px;
     padding: 28px 0;
     height: 128px;
