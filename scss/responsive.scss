@@ -71,8 +71,43 @@
             line-height: 1.4;
         }
     }
+    .page-inner .left-content{
+        padding-right: 30px;
+    }
+    .calendar-wrap{
+        margin-left: 0;
+    }
+    .modal-art{
+        width: 80%;
+        &.active{
+            
+        }
+    }
+    .modal-mask{
+         &.active{
+             .close{
+                 right: 80%;
+             }
+        }
+    }
 }
 @media (max-width: 992px) {
+    .o-hidden{
+        padding: 0;
+    }
+    .flex2 {
+        order: 1;
+        margin: 10px 0 0 0 !important;
+        .footer-soc, .copy{
+            text-align: left;
+        }
+    }
+    .row-flex{
+        flex-flow: row wrap;
+    }
+    .page-inner .left-content{
+        padding-right: 15px;
+    }
     .footer-contact {
         float: none;
     }
