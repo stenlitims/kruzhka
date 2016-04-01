@@ -26,5 +26,10 @@ $(document).ready(function () {
         $('html').removeClass('o-hidden');
         $('.modal-art, .modal-mask').removeClass('active');
     });
+    
+    $('.list-jobs .title span').on('click', function(){
+        $(this).parent().next().slideToggle(200);
+        $(this).toggleClass('active');
+    });
 
 });

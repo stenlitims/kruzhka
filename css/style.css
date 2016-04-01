@@ -792,39 +792,44 @@ a.btn:focus {
   margin-top: 10px;
   font-weight: bold; }
 
-.footer-contact, .contact-block {
+.footer-contact,
+.contact-block {
   float: right; }
-  .footer-contact .phone, .contact-block .phone {
+  .footer-contact .phone,
+  .contact-block .phone {
     font-size: 25px;
     font-weight: 300;
     font-family: "Acrom";
     margin-bottom: 1px; }
-  .footer-contact a, .contact-block a {
+  .footer-contact a,
+  .contact-block a {
     text-decoration: underline;
     font-size: 11px;
     text-transform: uppercase; }
-    .footer-contact a:hover, .contact-block a:hover {
+    .footer-contact a:hover,
+    .contact-block a:hover {
       text-decoration: none; }
 
-.page-inner h1 {
-  font-size: 58px;
-  font-weight: 900;
-  font-family: "Acrom";
-  position: relative;
-  margin-top: 0;
-  text-transform: uppercase;
-  margin-bottom: 70px; }
-  .page-inner h1:before {
-    content: "";
-    width: 94px;
-    position: absolute;
-    left: 0;
-    height: 2px;
-    background: #F9B53D;
-    bottom: -26px; }
-
-.page-inner .list-events {
-  padding-right: 55px; }
+.page-inner {
+  margin-top: 100px; }
+  .page-inner h1 {
+    font-size: 58px;
+    font-weight: 900;
+    font-family: "Acrom";
+    position: relative;
+    margin-top: 0;
+    text-transform: uppercase;
+    margin-bottom: 70px; }
+    .page-inner h1:before {
+      content: "";
+      width: 94px;
+      position: absolute;
+      left: 0;
+      height: 2px;
+      background: #F9B53D;
+      bottom: -26px; }
+  .page-inner .list-events {
+    padding-right: 55px; }
 
 .date-top-item,
 .list-events .date {
@@ -999,13 +1004,15 @@ a.btn:focus {
       text-align: center;
       font-weight: normal; }
 
-.h2 {
+.h2,
+h2 {
   font-size: 38px;
   font-weight: 900;
   color: #000;
   font-family: "Acrom";
   text-transform: uppercase; }
-  .h2 a {
+  .h2 a,
+  h2 a {
     font-weight: bold;
     margin-left: 10px;
     font-size: 15px; }
@@ -1174,6 +1181,22 @@ a.btn:focus {
     line-height: 2;
     color: #737373; }
 
+.years {
+  border: solid 1px #e9e9e9;
+  min-width: 300px;
+  float: right;
+  padding: 28px;
+  padding-bottom: 1px;
+  font-family: "Acrom";
+  font-weight: bold; }
+  .years .y {
+    margin-bottom: 30px;
+    text-align: center; }
+    .years .y a {
+      color: #FF7C11; }
+      .years .y a:hover {
+        color: #f9b53d; }
+
 .r-nav {
   border: solid 1px #e9e9e9;
   min-width: 300px;
@@ -1207,7 +1230,7 @@ a.btn:focus {
 
 .mobile-nav {
   margin-top: -50px;
-  padding: 30px 0px;
+  padding: 30px 10px;
   border-bottom: 1px solid #E9E9E9;
   margin-bottom: 50px;
   overflow-x: auto; }
@@ -1233,6 +1256,118 @@ a.btn:focus {
   margin: 22px 0 34px; }
   .reklama-img > div {
     padding: 0; }
+    .reklama-img > div img {
+      width: 100%; }
+
+.footer-sport {
+  margin-top: 30px;
+  padding: 28px 0;
+  height: 128px;
+  background: #F4F4F4 url(../images/sports.jpg) repeat-x center; }
+
+.list-jobs {
+  margin: 50px 0 0 10px;
+  padding: 0;
+  list-style: none; }
+  .list-jobs li {
+    margin-bottom: 30px; }
+  .list-jobs .title {
+    color: #ff7c11;
+    font-weight: 700;
+    font-family: "Acrom";
+    text-transform: uppercase; }
+    .list-jobs .title span {
+      cursor: pointer; }
+      .list-jobs .title span.active .fa {
+        transform: rotate(90deg); }
+      .list-jobs .title span .fa {
+        margin-right: 10px; }
+  .list-jobs .text {
+    padding-left: 18px;
+    display: none; }
+    .list-jobs .text h3 {
+      margin-top: 15px;
+      font-size: 15px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: "Acrom";
+      padding-bottom: 3px; }
+    .list-jobs .text p {
+      margin: 0;
+      padding-bottom: 10px; }
+
+.contact-phone {
+  text-align: right;
+  font-size: 24px;
+  font-family: "Acrom";
+  font-weight: 300; }
+
+.contact-form {
+  margin-top: 45px; }
+  .contact-form .form-group {
+    margin-bottom: 30px; }
+  .contact-form textarea {
+    height: 200px;
+    resize: none; }
+
+.form-control {
+  border: solid 1px #e9e9e9;
+  border-radius: 0;
+  box-shadow: none;
+  padding-left: 17px;
+  font-size: 15px; }
+
+input.form-control,
+select.form-control {
+  height: 50px; }
+
+textarea.form-control {
+  padding-top: 16px; }
+
+.select-wrap {
+  position: relative; }
+  .select-wrap:before {
+    content: '';
+    position: absolute;
+    top: 23px;
+    right: 16px;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #f9b53d transparent transparent transparent;
+    pointer-events: none; }
+  .select-wrap select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+
+.press-block {
+  margin-top: 80px; }
+  .press-block h2 {
+    margin-bottom: 35px; }
+
+.press-list .item {
+  min-height: 300px;
+  margin-bottom: 15px; }
+  .press-list .item .img {
+    margin-bottom: 16px; }
+    .press-list .item .img img {
+      display: block;
+      width: 100%; }
+  .press-list .item .date {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b6b6b6; }
+  .press-list .item .title {
+    color: #f9b53d;
+    font-weight: bold; }
+    .press-list .item .title a {
+      color: #f9b53d; }
+      .press-list .item .title a:hover {
+        color: #FF7C11; }
 
 @media all and (max-width: 1200px) and (min-width: 992px) {
   .header .logo {
@@ -1325,11 +1460,5 @@ a.btn:focus {
     margin-top: -240px; }
     .home .slogon:before {
       bottom: -73px; } }
-
-.footer-sport {
-  margin-top: 30px;
-  padding: 28px 0;
-  height: 128px;
-  background: #F4F4F4 url(../images/sports.jpg) repeat-x center; }
 
 /*# sourceMappingURL=style.css.map */
