@@ -74,6 +74,7 @@ a:focus {
         min-height: 500px;
         .top-line {
             background: rgba(0, 0, 0, .3);
+            border-bottom: none;
         }
         .navbar-toggle {
             .icon-bar {
@@ -176,6 +177,7 @@ a:focus {
         padding: 11px 0;
         background: #FCFCFC;
         margin-bottom: 50px;
+        border-bottom: solid 1px #e9e9e9;
     }
     font-size: 15px;
     .logo {
@@ -943,12 +945,34 @@ a.btn:focus {
             bottom: -26px;
         }
     }
-    .left-content {
-        padding-right: 70px;
+    .list-events {
+        padding-right: 55px;
     }
 }
-.list-events {
-    .row {
+.date-top-item,
+.list-events .date {
+    font-family: $acrom;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: #F48E3B;
+    padding: 7px 15px;
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    z-index: 1;
+    text-transform: uppercase;
+    &:before {
+        position: absolute;
+        right: -20px;
+        @include triangle(20px 32px, #F48E3B, up-left);
+        top: 0;
+        content: "";
+    }
+}
+.list-events,
+.list-items {
+    > .row {
         margin-left: -10px;
         margin-right: -10px;
         .col-sm-6 {
@@ -961,25 +985,6 @@ a.btn:focus {
         position: relative;
         .img {
             position: relative;
-            .date {
-                font-family: $acrom;
-                font-size: 13px;
-                font-weight: bold;
-                color: #fff;
-                background: #F48E3B;
-                padding: 7px 15px;
-                position: absolute;
-                top: -4px;
-                left: -5px;
-                text-transform: uppercase;
-                &:before {
-                    position: absolute;
-                    right: -20px;
-                    @include triangle(20px 32px, #F48E3B, up-left);
-                    top: 0;
-                    content: "";
-                }
-            }
             a {
                 &:hover {}
             }
@@ -988,31 +993,102 @@ a.btn:focus {
                 width: 100%;
             }
         }
-        .info {
-            padding: 30px;
-            border: 1px solid #E9E9E9;
-            .title {
-                font-family: $acrom;
-                color: #000;
-                text-transform: uppercase;
-                font-size: 18px;
-                font-weight: 700;
-                margin-bottom: 15px;
-            }
-            a {
-                color: #000;
-                &:hover {}
-            }
-            .intro {
-                line-height: 1.6;
-            }
+    }
+    .info {
+        padding: 30px;
+        border: 1px solid #E9E9E9;
+    }
+    .title {
+        font-family: $acrom;
+        color: #000;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    a {
+        color: #000;
+        &:hover {}
+    }
+    .intro {
+        line-height: 1.6;
+    }
+}
+.list-events {
+    .arr {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        color: $colorLink;
+        .fa {}
+    }
+}
+.list-menu {
+    margin-bottom: 70px;
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .title {
+        margin-bottom: 16px;
+        font-size: 14px;
+    }
+    .title2 {
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #737373;
+        margin-bottom: 24px;
+        font-weight: bold;
+        height: 22px;
+    }
+    .info {
+        padding: 15px 20px;
+        .row {
+            min-height: 50px;
         }
-        .arr {
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            color: $colorLink;
-            .fa {}
+    }
+    .litr {
+        font-size: 14px;
+        color: #a4a4a4;
+    }
+    .price {
+        color: #f48e3b;
+        font-size: 15px;
+        font-family: $acrom;
+    }
+    .col-xs-6 {
+        margin-bottom: 5px;
+        .price {
+            text-align: right;
+        }
+    }
+}
+.title-cat {
+    margin-bottom: 40px;
+    .h2 {
+        display: inline-block;
+        margin: 0 !important;
+        vertical-align: middle;
+    }
+    .fill-cat {
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 10px;
+        a {
+            margin: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 18px;
+            display: inline-block;
+            padding: 6px 20px;
+            border: 2px solid #F48E3B;
+            background: #F48E3B;
+            color: #fff;
+            &.active,
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
         }
     }
 }
@@ -1075,22 +1151,30 @@ a.btn:focus {
         }
     }
 }
+.h2 {
+    font-size: 38px;
+    font-weight: 900;
+    color: #000;
+    font-family: $acrom;
+    text-transform: uppercase;
+    a {
+        font-weight: bold;
+        margin-left: 10px;
+        font-size: 15px;
+        &:hover {}
+    }
+}
+.left-content {
+    .h2 {
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+}
 .archive-ev {
-    margin-top: 100px;
     .h2 {
         margin-bottom: 65px;
-        font-size: 38px;
-        font-weight: 900;
-        color: #000;
-        font-family: $acrom;
-        text-transform: uppercase;
-        a {
-            font-weight: bold;
-            margin-left: 10px;
-            font-size: 15px;
-            &:hover {}
-        }
     }
+    margin-top: 100px;
     .carousel {
         border-right: 1px solid #fff;
     }
@@ -1178,10 +1262,20 @@ a.btn:focus {
 }
 .m-content {
     h1 {
+        text-transform: uppercase;
         font-size: 58px;
         font-weight: 900;
         margin-top: 0;
         margin-bottom: 50px;
+        font-family: $acrom;
+    }
+    .img-m {
+        position: relative;
+        margin-bottom: 30px;
+        img {
+            display: block;
+            max-width: 100%;
+        }
     }
     .img-map {
         margin-bottom: 30px;
@@ -1230,7 +1324,7 @@ a.btn:focus {
         }
     }
     .links {
-        margin: 20px 0 20px;
+        margin: 50px 0 20px;
         a {
             text-transform: uppercase;
             .fa {
@@ -1238,16 +1332,91 @@ a.btn:focus {
             }
         }
     }
-    .pull-left {
-        &:hover {}
-        .fa {
-            &.fa-caret-left {}
+    .info-bl {
+        font-family: $acrom;
+        font-weight: bold;
+        text-transform: uppercase;
+        .price {
+            font-size: 58px;
+            color: #f48e3b;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+        .weight {}
+        .text {
+            line-height: 2;
+            color: #737373;
+        }
+        margin-bottom: 35px;
+    }
+}
+.r-nav {
+    border: solid 1px #e9e9e9;
+    min-width: 300px;
+    float: right;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        padding: 28px;
+        li {
+            font-family: $acrom;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        a {
+            font-size: 15px;
+            color: #ff7c11;
+            &:hover {}
+        }
+        .active a,
+        li a:hover {
+            color: #000;
         }
     }
-    .pull-right {
-        &:hover {}
-        .fa {
-            &.fa-caret-right {}
+    .reg {
+        border-top: solid 1px #e9e9e9;
+        padding: 40px 26px;
+        .btn {
+            display: block;
+        }
+        p {
+            margin: 0 auto 20px;
+            max-width: 200px;
+        }
+    }
+}
+.mobile-nav {
+    margin-top: -50px;
+    padding: 30px 0px;
+    border-bottom: 1px solid #E9E9E9;
+    margin-bottom: 50px;
+    overflow-x:auto; 
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        white-space: nowrap;
+        
+        li {
+            display: inline-block;
+            font-family: $acrom;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 0 12px;
+        }
+        a {
+            font-size: 15px;
+            color: #ff7c11;
+            &:hover {}
+        }
+        .active a,
+        li a:hover {
+            color: #000;
         }
     }
 }

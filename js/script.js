@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
     $('.list-sch').perfectScrollbar();
     
-    $(document).on('click', '.list-events a', function(e){
+    $(document).on('click', '.list-events a, .list-items a', function(e){
         e.preventDefault();
         $('html').addClass('o-hidden');
         $('.modal-art, .modal-mask').addClass('active');

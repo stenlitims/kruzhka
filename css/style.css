@@ -111,7 +111,8 @@ a:focus {
   background-repeat: no-repeat;
   min-height: 500px; }
   .home .header .top-line {
-    background: rgba(0, 0, 0, 0.3); }
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: none; }
   .home .header .navbar-toggle .icon-bar {
     background: #fff; }
 
@@ -195,7 +196,8 @@ a:focus {
   .header .top-line {
     padding: 11px 0;
     background: #FCFCFC;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    border-bottom: solid 1px #e9e9e9; }
   .header .logo {
     float: left;
     margin-right: 45px; }
@@ -821,63 +823,137 @@ a.btn:focus {
     background: #F9B53D;
     bottom: -26px; }
 
-.page-inner .left-content {
-  padding-right: 70px; }
+.page-inner .list-events {
+  padding-right: 55px; }
 
-.list-events .row {
+.date-top-item,
+.list-events .date {
+  font-family: "Acrom";
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  background: #F48E3B;
+  padding: 7px 15px;
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  z-index: 1;
+  text-transform: uppercase; }
+  .date-top-item:before,
+  .list-events .date:before {
+    position: absolute;
+    right: -20px;
+    height: 0;
+    width: 0;
+    border-top: 32px solid #F48E3B;
+    border-right: 20px solid transparent;
+    top: 0;
+    content: ""; }
+
+.list-events > .row,
+.list-items > .row {
   margin-left: -10px;
   margin-right: -10px; }
-  .list-events .row .col-sm-6 {
+  .list-events > .row .col-sm-6,
+  .list-items > .row .col-sm-6 {
     padding-left: 10px;
     padding-right: 10px; }
 
-.list-events .item {
+.list-events .item,
+.list-items .item {
   margin-bottom: 20px;
   position: relative; }
-  .list-events .item .img {
+  .list-events .item .img,
+  .list-items .item .img {
     position: relative; }
-    .list-events .item .img .date {
-      font-family: "Acrom";
-      font-size: 13px;
-      font-weight: bold;
-      color: #fff;
-      background: #F48E3B;
-      padding: 7px 15px;
-      position: absolute;
-      top: -4px;
-      left: -5px;
-      text-transform: uppercase; }
-      .list-events .item .img .date:before {
-        position: absolute;
-        right: -20px;
-        height: 0;
-        width: 0;
-        border-top: 32px solid #F48E3B;
-        border-right: 20px solid transparent;
-        top: 0;
-        content: ""; }
-    .list-events .item .img img {
+    .list-events .item .img img,
+    .list-items .item .img img {
       display: block;
       width: 100%; }
-  .list-events .item .info {
-    padding: 30px;
-    border: 1px solid #E9E9E9; }
-    .list-events .item .info .title {
-      font-family: "Acrom";
-      color: #000;
-      text-transform: uppercase;
-      font-size: 18px;
+
+.list-events .info,
+.list-items .info {
+  padding: 30px;
+  border: 1px solid #E9E9E9; }
+
+.list-events .title,
+.list-items .title {
+  font-family: "Acrom";
+  color: #000;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700; }
+
+.list-events a,
+.list-items a {
+  color: #000; }
+
+.list-events .intro,
+.list-items .intro {
+  line-height: 1.6; }
+
+.list-events .arr {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  color: #f9b53d; }
+
+.list-menu {
+  margin-bottom: 70px; }
+  .list-menu .row {
+    margin-left: -15px;
+    margin-right: -15px; }
+  .list-menu .title {
+    margin-bottom: 16px;
+    font-size: 14px; }
+  .list-menu .title2 {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #737373;
+    margin-bottom: 24px;
+    font-weight: bold;
+    height: 22px; }
+  .list-menu .info {
+    padding: 15px 20px; }
+    .list-menu .info .row {
+      min-height: 50px; }
+  .list-menu .litr {
+    font-size: 14px;
+    color: #a4a4a4; }
+  .list-menu .price {
+    color: #f48e3b;
+    font-size: 15px;
+    font-family: "Acrom"; }
+  .list-menu .col-xs-6 {
+    margin-bottom: 5px; }
+    .list-menu .col-xs-6 .price {
+      text-align: right; }
+
+.title-cat {
+  margin-bottom: 40px; }
+  .title-cat .h2 {
+    display: inline-block;
+    margin: 0 !important;
+    vertical-align: middle; }
+  .title-cat .fill-cat {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px; }
+    .title-cat .fill-cat a {
+      margin: 6px;
+      font-size: 13px;
       font-weight: 700;
-      margin-bottom: 15px; }
-    .list-events .item .info a {
-      color: #000; }
-    .list-events .item .info .intro {
-      line-height: 1.6; }
-  .list-events .item .arr {
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
-    color: #f9b53d; }
+      text-transform: uppercase;
+      border-radius: 18px;
+      display: inline-block;
+      padding: 6px 20px;
+      border: 2px solid #F48E3B;
+      background: #F48E3B;
+      color: #fff; }
+      .title-cat .fill-cat a.active,
+      .title-cat .fill-cat a:hover {
+        background: #fff;
+        color: #000; }
 
 .calendar-wrap {
   margin-left: 30px; }
@@ -923,19 +999,25 @@ a.btn:focus {
       text-align: center;
       font-weight: normal; }
 
+.h2 {
+  font-size: 38px;
+  font-weight: 900;
+  color: #000;
+  font-family: "Acrom";
+  text-transform: uppercase; }
+  .h2 a {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 15px; }
+
+.left-content .h2 {
+  margin-top: 0;
+  margin-bottom: 35px; }
+
 .archive-ev {
   margin-top: 100px; }
   .archive-ev .h2 {
-    margin-bottom: 65px;
-    font-size: 38px;
-    font-weight: 900;
-    color: #000;
-    font-family: "Acrom";
-    text-transform: uppercase; }
-    .archive-ev .h2 a {
-      font-weight: bold;
-      margin-left: 10px;
-      font-size: 15px; }
+    margin-bottom: 65px; }
   .archive-ev .carousel {
     border-right: 1px solid #fff; }
   .archive-ev .container-fluid {
@@ -1018,10 +1100,19 @@ a.btn:focus {
   padding-right: 17px; }
 
 .m-content h1 {
+  text-transform: uppercase;
   font-size: 58px;
   font-weight: 900;
   margin-top: 0;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  font-family: "Acrom"; }
+
+.m-content .img-m {
+  position: relative;
+  margin-bottom: 30px; }
+  .m-content .img-m img {
+    display: block;
+    max-width: 100%; }
 
 .m-content .img-map {
   margin-bottom: 30px;
@@ -1059,11 +1150,80 @@ a.btn:focus {
   text-align: right; }
 
 .m-content .links {
-  margin: 20px 0 20px; }
+  margin: 50px 0 20px; }
   .m-content .links a {
     text-transform: uppercase; }
     .m-content .links a .fa {
       margin: 0 10px; }
+
+.m-content .info-bl {
+  font-family: "Acrom";
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 35px; }
+  .m-content .info-bl .price {
+    font-size: 58px;
+    color: #f48e3b;
+    line-height: 60px;
+    margin-bottom: 15px; }
+  .m-content .info-bl .text {
+    line-height: 2;
+    color: #737373; }
+
+.r-nav {
+  border: solid 1px #e9e9e9;
+  min-width: 300px;
+  float: right; }
+  .r-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 28px; }
+    .r-nav ul li {
+      font-family: "Acrom";
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: 700; }
+      .r-nav ul li:last-child {
+        margin-bottom: 0; }
+    .r-nav ul a {
+      font-size: 15px;
+      color: #ff7c11; }
+    .r-nav ul .active a,
+    .r-nav ul li a:hover {
+      color: #000; }
+  .r-nav .reg {
+    border-top: solid 1px #e9e9e9;
+    padding: 40px 26px; }
+    .r-nav .reg .btn {
+      display: block; }
+    .r-nav .reg p {
+      margin: 0 auto 20px;
+      max-width: 200px; }
+
+.mobile-nav {
+  margin-top: -50px;
+  padding: 30px 0px;
+  border-bottom: 1px solid #E9E9E9;
+  margin-bottom: 50px;
+  overflow-x: auto; }
+  .mobile-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap; }
+    .mobile-nav ul li {
+      display: inline-block;
+      font-family: "Acrom";
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 12px; }
+    .mobile-nav ul a {
+      font-size: 15px;
+      color: #ff7c11; }
+    .mobile-nav ul .active a,
+    .mobile-nav ul li a:hover {
+      color: #000; }
 
 @media all and (max-width: 1200px) and (min-width: 992px) {
   .header .logo {
@@ -1110,8 +1270,8 @@ a.btn:focus {
     font-size: 13px; }
   .main-row .info-item .text {
     line-height: 1.4; }
-  .page-inner .left-content {
-    padding-right: 30px; }
+  .page-inner .list-events {
+    padding-right: 15px; }
   .calendar-wrap {
     margin-left: 0; }
   .modal-art {
@@ -1129,8 +1289,8 @@ a.btn:focus {
       text-align: left; }
   .row-flex {
     flex-flow: row wrap; }
-  .page-inner .left-content {
-    padding-right: 15px; }
+  .page-inner .list-events {
+    padding-right: 0px; }
   .footer-contact {
     float: none; }
   .navbar-toggle {
