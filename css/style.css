@@ -792,18 +792,18 @@ a.btn:focus {
   margin-top: 10px;
   font-weight: bold; }
 
-.footer-contact {
+.footer-contact, .contact-block {
   float: right; }
-  .footer-contact .phone {
+  .footer-contact .phone, .contact-block .phone {
     font-size: 25px;
     font-weight: 300;
     font-family: "Acrom";
     margin-bottom: 1px; }
-  .footer-contact a {
+  .footer-contact a, .contact-block a {
     text-decoration: underline;
     font-size: 11px;
     text-transform: uppercase; }
-    .footer-contact a:hover {
+    .footer-contact a:hover, .contact-block a:hover {
       text-decoration: none; }
 
 .page-inner h1 {
@@ -1009,6 +1009,10 @@ a.btn:focus {
     font-weight: bold;
     margin-left: 10px;
     font-size: 15px; }
+
+.left-content p {
+  line-height: 1.6;
+  margin-bottom: 20px; }
 
 .left-content .h2 {
   margin-top: 0;
@@ -1224,6 +1228,11 @@ a.btn:focus {
     .mobile-nav ul .active a,
     .mobile-nav ul li a:hover {
       color: #000; }
+
+.reklama-img {
+  margin: 22px 0 34px; }
+  .reklama-img > div {
+    padding: 0; }
 
 @media all and (max-width: 1200px) and (min-width: 992px) {
   .header .logo {

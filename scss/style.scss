@@ -909,7 +909,7 @@ a.btn:focus {
     margin-top: 10px;
     font-weight: bold;
 }
-.footer-contact {
+.footer-contact, .contact-block {
     float: right;
     .phone {
         font-size: 25px;
@@ -1165,6 +1165,10 @@ a.btn:focus {
     }
 }
 .left-content {
+    p{
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
     .h2 {
         margin-top: 0;
         margin-bottom: 35px;
@@ -1418,6 +1422,12 @@ a.btn:focus {
         li a:hover {
             color: #000;
         }
+    }
+}
+.reklama-img{
+    margin: 22px 0 34px;
+    > div{
+        padding: 0;
     }
 }
 @import "responsive";
