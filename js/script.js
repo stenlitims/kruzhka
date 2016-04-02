@@ -15,6 +15,7 @@ $(document).ready(function () {
         navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>']
     });
     $('.list-sch').perfectScrollbar();
+    $('.list-adress').perfectScrollbar();
     
     $(document).on('click', '.list-events a, .list-items a', function(e){
         e.preventDefault();
