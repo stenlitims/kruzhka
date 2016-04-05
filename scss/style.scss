@@ -45,7 +45,6 @@ a:focus {
             text-transform: uppercase;
             font-family: 'Acrom';
             font-weight: bold;
-            font-size: 15px;
             margin: 0 11px;
         }
         a {
@@ -349,8 +348,13 @@ a.btn:focus {
                 @include transition(all .2s ease-in-out);
             }
         }
-        &:hover .title:before {
-            color: #fff;
+        .title2{
+            @include transition(all .2s ease-in-out);
+        }
+        &:hover {
+            .title:before, .title2 {
+                color: #fff;
+            }
         }
     }
     .calendar-item {
@@ -696,10 +700,12 @@ a.btn:focus {
 }
 .item-maps {
     .map {
+        display: block;
         font-family: $acrom;
         position: relative;
         .img {
             height: $hItem / 2;
+            background-size: cover;
         }
         &.map2 .text-mask {
             background: rgba(241, 133, 44, .8);
@@ -713,6 +719,7 @@ a.btn:focus {
             background: rgba(244, 175, 58, .8);
             z-index: 1;
             color: #fff;
+            @include transition(all .3s ease-in-out);
         }
         .title {
             font-size: 38px;
@@ -726,6 +733,11 @@ a.btn:focus {
             position: absolute;
             bottom: 28px;
             right: 28px;
+        }
+        &:hover {
+            .text-mask {
+                opacity: 0;
+            }
         }
     }
 }
@@ -877,6 +889,7 @@ a.btn:focus {
         text-decoration: underline;
         &:hover {
             color: $colorLinkHover;
+            text-decoration: none;
         }
     }
 }
@@ -1031,8 +1044,10 @@ a.btn:focus {
         margin-right: -15px;
     }
     .title {
-        margin-bottom: 16px;
+        margin-bottom: 2px;
         font-size: 14px;
+        height: 38px;
+        line-height: 1.2;
     }
     .title2 {
         text-transform: uppercase;
@@ -1051,6 +1066,7 @@ a.btn:focus {
     .litr {
         font-size: 14px;
         color: #a4a4a4;
+        margin-bottom: 1px;
     }
     .price {
         color: #f48e3b;
@@ -1213,7 +1229,7 @@ h2 {
     top: 0;
     right: -50%;
     visibility: hidden;
-    opacity: 0;
+    opacity: 1;
     width: 50%;
     bottom: 0;
     background: #fff;
@@ -1228,6 +1244,7 @@ h2 {
         overflow-x: hidden;
     }
 }
+
 .modal-mask {
     visibility: hidden;
     opacity: 0;
@@ -1524,6 +1541,15 @@ h2 {
     box-shadow: none;
     padding-left: 17px;
     font-size: 15px;
+    &:focus{
+        box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px lighten($colorLink, 15);
+        border-color: lighten($colorLink, 15);
+    }
+}
+.header .navbar-toggle.active{
+    .icon-bar{
+        background: #808080;
+    }
 }
 input.form-control,
 select.form-control {
@@ -1773,14 +1799,14 @@ select.form-control {
         }
     }
 }
-
 .list-adress {
-     margin-top: 37px;
+    margin-top: 37px;
     padding-right: 15px;
     position: relative;
     height: 700px;
     overflow: hidden;
     .item {
+        cursor: pointer;
         padding: 13px 17px;
         border-bottom: solid 1px #f4f4f4;
         .title {
@@ -1823,6 +1849,7 @@ select.form-control {
         }
         .phone {}
         .link {
+            margin-top: 15px;
             text-align: right;
             opacity: 0;
             a {
@@ -1833,7 +1860,8 @@ select.form-control {
                 }
             }
         }
-        &:hover, &.active {
+        &:hover,
+        &.active {
             background: #f8f8f8;
             .link {
                 opacity: 1;
@@ -1841,11 +1869,15 @@ select.form-control {
         }
     }
 }
+.ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y{
+    background: #f3f3f3;
+}
 .map-wrap {
     margin-bottom: 24px;
     .heading {
         .title {
-            margin-bottom: 11px;
+            margin-bottom: 0px;
+            margin-top: 8px;
             color: $colorLink;
             font-weight: bold;
             text-transform: uppercase;
@@ -1854,6 +1886,9 @@ select.form-control {
             margin-left: 7px;
             .fa {
                 margin-right: 5px;
+            }
+            &:hover{
+               border-color: #fff; 
             }
         }
         .tabs {
@@ -1887,11 +1922,10 @@ select.form-control {
         margin-bottom: 24px;
         text-transform: uppercase;
     }
-    table{
+    table {
         width: 100%;
-        td{
+        td {
             vertical-align: top;
-     
         }
     }
     .days {
@@ -1921,7 +1955,7 @@ select.form-control {
             color: #a4a4a4;
         }
     }
-    .col-md-6{
+    .col-md-6 {
         margin-bottom: 26px;
     }
 }
