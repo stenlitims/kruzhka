@@ -1441,9 +1441,11 @@ textarea.form-control {
   font-weight: bold;
   font-family: "Acrom"; }
   .back a {
-    color: #FF7C11; }
-    .back a:hover {
-      text-decoration: underline; }
+    /*  color: $colorLinkHover; 
+        &:hover {
+            text-decoration: underline;
+        }
+        */ }
   .back .fa {
     margin-right: 5px; }
 
@@ -1821,6 +1823,36 @@ textarea.form-control {
     line-height: 1.6;
     margin-bottom: 20px; }
 
+.page-inner .adr-h {
+  font-size: 38px;
+  margin-bottom: 30px; }
+  .page-inner .adr-h:before {
+    bottom: -20px; }
+
+.page-inner2 {
+  margin-top: 60px; }
+
+.big-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  overflow: hidden;
+  display: none; }
+  .big-img .to-back {
+    position: absolute;
+    top: 15px;
+    right: 15px; }
+  .big-img img {
+    width: 100%; }
+
+.wrap-r {
+  position: relative; }
+  .wrap-r .map {
+    padding-right: 1px; }
+
 @media all and (max-width: 1300px) and (min-width: 1110px) {
   .home .list .num {
     font-size: 56px; }
@@ -1918,6 +1950,12 @@ textarea.form-control {
     text-align: center; } }
 
 @media (max-width: 992px) {
+  .page-inner {
+    margin-top: 50px; }
+  .footer {
+    display: none; }
+  .wrap {
+    padding-bottom: 30px; }
   .list-adress .item .link {
     text-align: left; }
   .list-adress .item .graf span {
@@ -2126,9 +2164,16 @@ textarea.form-control {
     overflow: visible;
     padding: 0;
     margin-top: 0; }
-  .map-wrap .heading .row > div:first-child {
-    margin-bottom: 20px;
-    text-align: center; }
+  .map-wrap .heading {
+    margin-top: 10px; }
+    .map-wrap .heading .title {
+      margin: 0;
+      font-size: 12px;
+      margin-right: -5px; }
+    .map-wrap .heading .row {
+      margin: 0; }
+      .map-wrap .heading .row > div {
+        padding: 0; }
   .adr-wrap {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2142,6 +2187,13 @@ textarea.form-control {
   .banner-acton {
     margin-top: 0; }
   .action-one h1 {
-    font-size: 24px; } }
+    font-size: 24px; }
+  .map-wrap .heading .tabs {
+    font-size: 12px;
+    margin-right: -5px; }
+  .map-wrap .heading .tabs a {
+    padding: 5px 15px; }
+  .map-wrap .heading .title .fa {
+    margin-right: 2px; } }
 
 /*# sourceMappingURL=style.css.map */

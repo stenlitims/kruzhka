@@ -44,9 +44,9 @@ $(document).ready(function () {
     });
     var acCarusel = $('.list-actions');
     acCarusel.owlCarousel({
-        loop: true,
+        loop: false,
         margin: 0,
-       // items: 2,
+        // items: 2,
         autoHeight: true,
         center: true,
         responsive: {
@@ -103,6 +103,19 @@ $(document).ready(function () {
     $(document).on('click', '.form-group .add-more a', function () {
         var data = $(this).parent().prev().clone();
         data.insertBefore($(this).parent());
+    });
+
+    $('.interer .list a').on('click', function (e) {
+        e.preventDefault();
+        var data = $(this).attr('href');
+        if (data == '') return;
+        if(data != $('.big-img img').attr('src')){
+            $('.big-img img').attr('src', data);
+        }
+        $('.big-img').fadeIn(200); 
+    });
+    $('.big-img .to-back .btn').on('click', function(){
+        $('.big-img').fadeOut(200); 
     });
 
 });

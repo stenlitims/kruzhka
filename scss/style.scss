@@ -1686,10 +1686,11 @@ select.form-control {
     font-weight: bold;
     font-family: $acrom;
     a {
-        color: $colorLinkHover;
+        /*  color: $colorLinkHover; 
         &:hover {
             text-decoration: underline;
         }
+        */
     }
     .fa {
         margin-right: 5px;
@@ -2181,9 +2182,43 @@ select.form-control {
         font-family: $acrom;
         margin-bottom: 24px;
     }
-    p{
+    p {
         line-height: 1.6;
         margin-bottom: 20px;
+    }
+}
+.page-inner .adr-h{
+    font-size: 38px;
+    margin-bottom: 30px;
+    &:before{
+        bottom: -20px;
+    }
+}
+.page-inner2{
+    margin-top: 60px;
+}
+.big-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    overflow: hidden;
+    display: none;
+    .to-back{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    img{
+        width: 100%;
+    }
+}
+.wrap-r{
+    position: relative;
+    .map{
+        padding-right: 1px;
     }
 }
 @import "responsive";
