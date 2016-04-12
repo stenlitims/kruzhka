@@ -42,10 +42,38 @@ $(document).ready(function () {
         nav: true,
         navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>']
     });
+    var acCarusel = $('.list-actions');
+    acCarusel.owlCarousel({
+        loop: true,
+        margin: 0,
+       // items: 2,
+        autoHeight: true,
+        center: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            800: {
+                items: 2
+            },
+            1600: {
+                items: 3
+            }
+        }
+    });
+    $(document).on('click', '.list-actions .owl-item', function (e) {
+        if ($(this).prev().hasClass('center')) {
+            acCarusel.trigger('next.owl.carousel');
+        }
+        if ($(this).next().hasClass('center')) {
+            acCarusel.trigger('prev.owl.carousel');
+        }
+    });
+
     $('.list-sch').perfectScrollbar();
     $('.list-adress').perfectScrollbar();
 
-    $(document).on('click', '.list-events a, .list-items a', function (e) {
+    $(document).on('click', '.list-events a, .list-items a, .open-modal', function (e) {
         e.preventDefault();
         $('html').addClass('o-hidden').css('paddingRight', getScrollBarWidth() + 'px');
         $('.modal-art, .modal-mask').addClass('active');
@@ -68,11 +96,13 @@ $(document).ready(function () {
             headerH();
         });
     }
-    $('.navbar-toggle').on('click', function(){
+    $('.navbar-toggle').on('click', function () {
         $(this).toggleClass('active');
     });
 
+    $(document).on('click', '.form-group .add-more a', function () {
+        var data = $(this).parent().prev().clone();
+        data.insertBefore($(this).parent());
+    });
 
-
-    //console.log(getScrollBarWidth());
 });
