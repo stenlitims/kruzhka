@@ -869,9 +869,13 @@ a.btn-border {
     }
 }
 .footer {
+    margin-top: 160px;
     .container {
         padding-top: 34px;
     }
+}
+.no-f-m {
+    margin-top: 0;
 }
 .footer-nav {
     padding-top: 7px;
@@ -1358,7 +1362,17 @@ h2 {
         a {
             text-transform: uppercase;
             .fa {
-                margin: 0 10px;
+                //   margin: 0 10px;
+            }
+        }
+        .pull-left {
+            .fa {
+                margin-right: 10px;
+            }
+        }
+        .pull-right {
+            .fa {
+                margin-left: 10px;
             }
         }
     }
@@ -2038,6 +2052,7 @@ select.form-control {
         }
     }
     .list-jobs {
+        margin-left: 0;
         .title {
             font-size: 24px;
         }
@@ -2187,17 +2202,17 @@ select.form-control {
         margin-bottom: 20px;
     }
 }
-.page-inner .adr-h{
+.page-inner .adr-h {
     font-size: 38px;
     margin-bottom: 30px;
-    &:before{
+    &:before {
         bottom: -20px;
     }
 }
-.page-inner2{
+.page-inner2 {
     margin-top: 60px;
 }
-.big-img{
+.big-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -2206,19 +2221,57 @@ select.form-control {
     background: #fff;
     overflow: hidden;
     display: none;
-    .to-back{
+    .to-back {
         position: absolute;
         top: 15px;
         right: 15px;
     }
-    img{
+    img {
         width: 100%;
     }
 }
-.wrap-r{
+.wrap-r {
     position: relative;
-    .map{
+    .map {
         padding-right: 1px;
     }
+}
+#map {
+    width: 100%;
+    height: 700px;
+    span.t, span.t4, span.t2, span.t3  {
+        display: block;
+    }
+    span.t3{
+        color: #9CA5A7;
+        font-size: 11px;
+}
+    span.t4{
+        font-size: 11px;
+        span{
+            margin-left: 7px;
+        }
+    }
+    .ymaps-2-1-38-balloon, .ymaps-2-1-38-balloon__layout{
+        border-radius: 5px;
+        background: #EFF8FA;
+    }
+    .ymaps-2-1-38-balloon__layout, .ymaps-2-1-38-balloon__content, .ymaps-2-1-38-balloon__tail:after{
+        background: #EFF8FA;
+    }
+}
+.square_layout {
+    position: relative;
+    height: 32px;
+    width: 34px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: url(../images/map-ico.png) no-repeat;
+    &:hover {
+        opacity: .4;
+    }
+}
+.wrap-r #map{
+    height: 550px;
 }
 @import "responsive";

@@ -115,7 +115,9 @@
                         <div class="heading">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a href="#" class="title"><i class="fa fa-map-marker"></i> НАЙТИ БЛИЖАЙШИЙ БАР</a>
+                                    <a href="#" class="title"><i class="fa fa-map-marker"></i> 
+                                    <span class="hidden-xs">НАЙТИ БЛИЖАЙШИЙ БАР</span>
+                                    <span class="visible-xs-inline">Найти бар рядом</span></a>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="tabs">
@@ -125,9 +127,45 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
                         <div class="map">
-                           <!-- <img src="images/big-map.jpg" class="img-responsive" alt=""> -->
-                           <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=GTbofRJBMnp-3IAz4bccPn0Iv0snsJ9G&width=100%&height=700&lang=ru_UA&sourceType=constructor"></script>
+                            <!-- <img src="images/big-map.jpg" class="img-responsive" alt=""> -->
+                            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+                            <script type="text/javascript">
+                                ymaps.ready(init);
+                                var myMap;
+
+                                function init() {
+                                    myMap = new ymaps.Map("map", {
+                                        center: [55.75396, 37.620393],
+                                        zoom: 13,
+                                        //  controls: []
+                                    });
+                                    var myIconContentLayout = ymaps.templateLayoutFactory.createClass('<div class="square_layout"></div>');
+                                    var squarePlacemark = new ymaps.Placemark(
+                                        [55.75396, 37.620393], {
+                                            hintContent: 'Метка ',
+                                            balloonContent: '<span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span>'
+                                        }, {
+                                            iconLayout: myIconContentLayout,
+                                            iconShape: {
+                                                type: 'Rectangle',
+                                                coordinates: [
+                                                    [0, 0],
+                                                    [32, 34]
+                                                ]
+                                            }
+                                        }
+                                    );
+                           
+                                    myMap.geoObjects.add(squarePlacemark);
+                                    myMap.behaviors.disable('scrollZoom');
+                                }
+
+                            </script>
+                            <div id="map"></div>
+
                         </div>
                     </div>
                     <div class="time-wrap hidden-xs">

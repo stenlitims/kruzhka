@@ -765,8 +765,13 @@ a.btn-border:focus {
   .ver-img-list img {
     white-space: nowrap; }
 
-.footer .container {
-  padding-top: 34px; }
+.footer {
+  margin-top: 160px; }
+  .footer .container {
+    padding-top: 34px; }
+
+.no-f-m {
+  margin-top: 0; }
 
 .footer-nav {
   padding-top: 7px; }
@@ -1183,8 +1188,10 @@ h2 {
   margin: 50px 0 20px; }
   .m-content .links a {
     text-transform: uppercase; }
-    .m-content .links a .fa {
-      margin: 0 10px; }
+  .m-content .links .pull-left .fa {
+    margin-right: 10px; }
+  .m-content .links .pull-right .fa {
+    margin-left: 10px; }
 
 .m-content .info-bl {
   font-family: "Acrom";
@@ -1708,8 +1715,10 @@ textarea.form-control {
     font-size: 24px;
     margin-bottom: 20px; }
 
-.adr-one .list-jobs .title {
-  font-size: 24px; }
+.adr-one .list-jobs {
+  margin-left: 0; }
+  .adr-one .list-jobs .title {
+    font-size: 24px; }
 
 .adr-left {
   margin-bottom: 20px; }
@@ -1853,12 +1862,50 @@ textarea.form-control {
   .wrap-r .map {
     padding-right: 1px; }
 
+#map {
+  width: 100%;
+  height: 700px; }
+  #map span.t, #map span.t4, #map span.t2, #map span.t3 {
+    display: block; }
+  #map span.t3 {
+    color: #9CA5A7;
+    font-size: 11px; }
+  #map span.t4 {
+    font-size: 11px; }
+    #map span.t4 span {
+      margin-left: 7px; }
+  #map .ymaps-2-1-38-balloon, #map .ymaps-2-1-38-balloon__layout {
+    border-radius: 5px;
+    background: #EFF8FA; }
+  #map .ymaps-2-1-38-balloon__layout, #map .ymaps-2-1-38-balloon__content, #map .ymaps-2-1-38-balloon__tail:after {
+    background: #EFF8FA; }
+
+.square_layout {
+  position: relative;
+  height: 32px;
+  width: 34px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: url(../images/map-ico.png) no-repeat; }
+  .square_layout:hover {
+    opacity: .4; }
+
+.wrap-r #map {
+  height: 550px; }
+
 @media all and (max-width: 1300px) and (min-width: 1110px) {
   .home .list .num {
     font-size: 56px; }
   .home .list .text {
     line-height: 1.5;
     margin-left: 5px; } }
+
+@media all and (max-width: 1100px) and (min-width: 990px) {
+  .main-row .info-item .icons {
+    margin-bottom: 10px; }
+  .main-row .info-item .text {
+    height: inherit;
+    margin-right: -10px; } }
 
 @media all and (max-width: 1300px) and (min-width: 992px) {
   .main-row .calendar-item {
@@ -1950,12 +1997,29 @@ textarea.form-control {
     text-align: center; } }
 
 @media (max-width: 992px) {
+  .list-actions {
+    margin: 20px 15px 0; }
+    .list-actions .item {
+      box-shadow: 0 0 4px 1px #C1C1C1;
+      transform: none;
+      margin-bottom: 45px; }
+      .list-actions .item .img:before {
+        visibility: hidden; }
+      .list-actions .item .img img {
+        display: block;
+        width: 100%; }
+      .list-actions .item .inf {
+        opacity: 1; }
   .page-inner {
     margin-top: 50px; }
   .footer {
     display: none; }
+  .home .footer {
+    display: block; }
   .wrap {
-    padding-bottom: 30px; }
+    padding-bottom: 160px; }
+  .wrap.home {
+    padding-bottom: 0px; }
   .list-adress .item .link {
     text-align: left; }
   .list-adress .item .graf span {
@@ -2028,9 +2092,43 @@ textarea.form-control {
     .years .y {
       display: inline-block;
       margin-left: 17px;
-      margin-right: 17px; } }
+      margin-right: 17px; }
+  .interer .list a {
+    display: block;
+    float: left;
+    width: 33.3%;
+    margin: 5px 0;
+    padding: 0 2px; }
+    .interer .list a img {
+      display: block;
+      max-width: 100%; } }
 
-@media (max-width: 768px) {
+@media all and (max-width: 992px) and (min-width: 767px) {
+  .adr-left {
+    margin-bottom: 5px;
+    position: relative; }
+    .adr-left .inf {
+      float: left;
+      width: 50%;
+      min-height: inherit; }
+    .adr-left .interer {
+      float: left;
+      width: 50%;
+      margin-top: 60px; }
+    .adr-left .btn {
+      position: absolute;
+      top: -68px;
+      right: 15px; } }
+
+@media (max-width: 767px) {
+  .list-actions {
+    margin-top: 0; }
+  .m-content .info-bl .price {
+    font-size: 40px; }
+  .list-adress {
+    -ms-touch-action: inherit;
+    touch-action: inherit;
+    overflow: hidden !important; }
   .mobile-nav ul {
     width: inherit;
     margin: 0 auto; }
@@ -2158,7 +2256,10 @@ textarea.form-control {
     margin-left: -15px;
     margin-right: -15px; }
   .time-wrap {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: -16px;
+    margin-right: -16px; }
   .list-adress {
     height: inherit;
     overflow: visible;
@@ -2167,7 +2268,7 @@ textarea.form-control {
   .map-wrap .heading {
     margin-top: 10px; }
     .map-wrap .heading .title {
-      margin: 0;
+      margin: 5px 0 0 0;
       font-size: 12px;
       margin-right: -5px; }
     .map-wrap .heading .row {
@@ -2191,9 +2292,35 @@ textarea.form-control {
   .map-wrap .heading .tabs {
     font-size: 12px;
     margin-right: -5px; }
-  .map-wrap .heading .tabs a {
-    padding: 5px 15px; }
   .map-wrap .heading .title .fa {
-    margin-right: 2px; } }
+    margin-right: 2px; }
+  .page-inner .adr-h {
+    margin-bottom: 50px; }
+  .adr-one .list-events .h2 {
+    padding-left: 15px; }
+  .adr-left .inf {
+    min-height: inherit; }
+  .adr-left .btn {
+    display: none; }
+  .interer {
+    margin-top: 42px; }
+    .interer .list a {
+      padding: 0;
+      margin: 0; }
+  .adr-left {
+    margin-bottom: 4px; }
+  .wrap-r #map {
+    height: 300px; }
+  .adr-one .list-events {
+    margin-top: 60px; } }
+
+@media (max-width: 394px) {
+  .page-inner h1,
+  .page-inner .adr-h {
+    font-size: 30px; }
+  .adr-one .list-events .h2 {
+    font-size: 20px; }
+  .map-wrap .heading .tabs a {
+    padding: 8px 15px; } }
 
 /*# sourceMappingURL=style.css.map */

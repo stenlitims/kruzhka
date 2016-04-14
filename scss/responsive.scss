@@ -7,6 +7,15 @@
         margin-left: 5px;
     }
 }
+@media all and (max-width: 1100px) and (min-width: 990px) {
+    .main-row .info-item .icons {
+        margin-bottom: 10px;
+    }
+    .main-row .info-item .text {
+        height: inherit;
+        margin-right: -10px;
+    }
+}
 @media all and (max-width: 1300px) and (min-width: 992px) {
     .main-row .calendar-item {
         background: #fff;
@@ -145,14 +154,40 @@
     }
 }
 @media (max-width: 992px) {
+    .list-actions {
+        margin: 20px 15px 0;
+        .item {
+            box-shadow: 0 0 4px 1px #C1C1C1;
+            transform: none;
+            margin-bottom: 45px;
+            .img {
+                &:before {
+                    visibility: hidden;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            .inf{
+                opacity: 1;
+            }
+        }
+    }
     .page-inner {
         margin-top: 50px;
     }
     .footer {
         display: none;
     }
+    .home .footer {
+        display: block;
+    }
     .wrap {
-        padding-bottom: 30px;
+        padding-bottom: 160px;
+    }
+    .wrap.home {
+        padding-bottom: 0px;
     }
     .list-adress .item .link {
         text-align: left;
@@ -257,8 +292,51 @@
             margin-right: 17px;
         }
     }
+    .interer .list a {
+        display: block;
+        float: left;
+        width: 33.3%;
+        margin: 5px 0;
+        padding: 0 2px;
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
 }
-@media (max-width: 768px) {
+@media all and (max-width: 992px) and (min-width: 767px) {
+    .adr-left {
+        margin-bottom: 5px;
+        position: relative;
+        .inf {
+            float: left;
+            width: 50%;
+            min-height: inherit;
+        }
+        .interer {
+            float: left;
+            width: 50%;
+            margin-top: 60px;
+        }
+        .btn {
+            position: absolute;
+            top: -68px;
+            right: 15px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .list-actions{
+        margin-top: 0;
+    }
+    .m-content .info-bl .price{
+        font-size: 40px;
+    }
+    .list-adress {
+        -ms-touch-action: inherit;
+        touch-action: inherit;
+        overflow: hidden !important;
+    }
     .mobile-nav ul {
         width: inherit;
         margin: 0 auto;
@@ -429,6 +507,9 @@
     }
     .time-wrap {
         margin-bottom: 30px;
+        margin-top: 30px;
+        margin-left: -16px;
+        margin-right: -16px;
     }
     .list-adress {
         height: inherit;
@@ -439,7 +520,7 @@
     .map-wrap .heading {
         margin-top: 10px;
         .title {
-            margin: 0;
+            margin: 5px 0 0 0;
             font-size: 12px;
             margin-right: -5px;
         }
@@ -473,10 +554,47 @@
         font-size: 12px;
         margin-right: -5px;
     }
-    .map-wrap .heading .tabs a {
-        padding: 5px 15px;
-    }
     .map-wrap .heading .title .fa {
         margin-right: 2px;
+    }
+    .page-inner .adr-h {
+        margin-bottom: 50px;
+    }
+    .adr-one .list-events .h2 {
+        padding-left: 15px;
+    }
+    .adr-left .inf {
+        min-height: inherit;
+    }
+    .adr-left .btn {
+        display: none;
+    }
+    .interer {
+        margin-top: 42px;
+        .list a {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .adr-left {
+        margin-bottom: 4px;
+    }
+    .wrap-r #map {
+        height: 300px;
+    }
+    .adr-one .list-events {
+        margin-top: 60px;
+    }
+}
+@media (max-width: 394px) {
+    .page-inner h1,
+    .page-inner .adr-h {
+        font-size: 30px;
+    }
+    .adr-one .list-events .h2 {
+        font-size: 20px;
+    }
+    .map-wrap .heading .tabs a {
+        padding: 8px 15px;
     }
 }

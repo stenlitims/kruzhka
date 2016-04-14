@@ -70,29 +70,64 @@
             <div class="adr-one">
                 <div class="row">
                     <div class="col-md-4 adr-left">
-                        <div class="inf">
-                            <div class="title"><span class="ico"></span>Славянский бульвар</div>
-                            <div class="adress">Киевская площадь, 3 Г</div>
-                            <div class="grafic">Вc-ЧТ 12-24:00
-                                <br> Пт-Сб 12:00-04:00</div>
-                            <div class="phone">+ 7 (495) 909-09-25</div>
-                        </div>
-                        <a href="#" class="btn">ЗАБРОНИРОВАТЬ СТОЛИК</a>
-                        <div class="interer">
-                            <div class="t">
-                                <span>ИНТЕРЬЕР</span> 150 мест в зале
+                        <div class="clearfix">
+                            <div class="inf">
+                                <div class="title"><span class="ico"></span>Славянский бульвар</div>
+                                <div class="adress">Киевская площадь, 3 Г</div>
+                                <div class="grafic">Вc-ЧТ 12-24:00
+                                    <br> Пт-Сб 12:00-04:00</div>
+                                <div class="phone">+ 7 (495) 909-09-25</div>
                             </div>
-                            <div class="list">
-                                <a href="images/adr-one/1.jpg"><img src="images/adr-one/1.jpg" alt=""></a>
-                                <a href="images/adr-one/2.jpg"><img src="images/adr-one/2.jpg" alt=""></a>
-                                <a href="images/adr-one/3.jpg"><img src="images/adr-one/3.jpg" alt=""></a>
+                            <a href="#" class="btn">ЗАБРОНИРОВАТЬ СТОЛИК</a>
+                            <div class="interer">
+                                <div class="t">
+                                    <span>ИНТЕРЬЕР</span> 150 мест в зале
+                                </div>
+                                <div class="list">
+                                    <a href="images/adr-one/1.jpg"><img src="images/adr-one/1.jpg" alt=""></a>
+                                    <a href="images/adr-one/2.jpg"><img src="images/adr-one/2.jpg" alt=""></a>
+                                    <a href="images/adr-one/3.jpg"><img src="images/adr-one/3.jpg" alt=""></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="wrap-r">
                             <div class="map">
-                                <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=GTbofRJBMnp-3IAz4bccPn0Iv0snsJ9G&width=100%&height=547&lang=ru_UA&sourceType=constructor"></script>
+                                <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+                                <script type="text/javascript">
+                                    ymaps.ready(init);
+                                    var myMap;
+
+                                    function init() {
+                                        myMap = new ymaps.Map("map", {
+                                            center: [55.75396, 37.620393],
+                                            zoom: 13,
+                                            //  controls: []
+                                        });
+                                        var myIconContentLayout = ymaps.templateLayoutFactory.createClass('<div class="square_layout"></div>');
+                                        var squarePlacemark = new ymaps.Placemark(
+                                            [55.75396, 37.620393], {
+                                                hintContent: 'Метка ',
+                                                balloonContent: '<span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span>'
+                                            }, {
+                                                iconLayout: myIconContentLayout,
+                                                iconShape: {
+                                                    type: 'Rectangle',
+                                                    coordinates: [
+                                                        [0, 0],
+                                                        [32, 34]
+                                                    ]
+                                                }
+                                            }
+                                        );
+
+                                        myMap.geoObjects.add(squarePlacemark);
+                                        myMap.behaviors.disable('scrollZoom');
+                                    }
+
+                                </script>
+                                <div id="map"></div>
                             </div>
                             <div class="big-img">
                                 <div class="to-back">

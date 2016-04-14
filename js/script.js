@@ -42,33 +42,35 @@ $(document).ready(function () {
         nav: true,
         navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>']
     });
-    var acCarusel = $('.list-actions');
-    acCarusel.owlCarousel({
-        loop: false,
-        margin: 0,
-        // items: 2,
-        autoHeight: true,
-        center: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            800: {
-                items: 2
-            },
-            1600: {
-                items: 3
+    if ($(window).width() > 992) {
+        var acCarusel = $('.list-actions');
+        acCarusel.owlCarousel({
+            loop: false,
+            margin: 0,
+            // items: 2,
+            autoHeight: true,
+            center: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                800: {
+                    items: 2
+                },
+                1600: {
+                    items: 3
+                }
             }
-        }
-    });
-    $(document).on('click', '.list-actions .owl-item', function (e) {
-        if ($(this).prev().hasClass('center')) {
-            acCarusel.trigger('next.owl.carousel');
-        }
-        if ($(this).next().hasClass('center')) {
-            acCarusel.trigger('prev.owl.carousel');
-        }
-    });
+        });
+        $(document).on('click', '.list-actions .owl-item', function (e) {
+            if ($(this).prev().hasClass('center')) {
+                acCarusel.trigger('next.owl.carousel');
+            }
+            if ($(this).next().hasClass('center')) {
+                acCarusel.trigger('prev.owl.carousel');
+            }
+        });
+    }
 
     $('.list-sch').perfectScrollbar();
     $('.list-adress').perfectScrollbar();
@@ -109,13 +111,13 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).attr('href');
         if (data == '') return;
-        if(data != $('.big-img img').attr('src')){
+        if (data != $('.big-img img').attr('src')) {
             $('.big-img img').attr('src', data);
         }
-        $('.big-img').fadeIn(200); 
+        $('.big-img').fadeIn(200);
     });
-    $('.big-img .to-back .btn').on('click', function(){
-        $('.big-img').fadeOut(200); 
+    $('.big-img .to-back .btn').on('click', function () {
+        $('.big-img').fadeOut(200);
     });
 
 });
