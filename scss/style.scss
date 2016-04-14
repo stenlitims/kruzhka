@@ -1566,10 +1566,29 @@ h2 {
         border-color: lighten($colorLink, 15);
     }
 }
+.header .navbar-toggle{
+    height: 47px;
+    width: 49px;
+    position: relative;
+}
 .header .navbar-toggle.active {
     .icon-bar {
-        background: #808080;
     }
+    span{
+        display: none;
+    }
+    &:before{
+        content: "×";
+        line-height: 1;
+        font-family: sans-serif;
+        font-size: 54px;
+        line-height: 46px;
+        position: absolute;
+        top: -4px;
+        left: 9px;
+        color: #5C5C5C;
+    }
+    
 }
 input.form-control,
 select.form-control {
@@ -2239,24 +2258,30 @@ select.form-control {
 #map {
     width: 100%;
     height: 700px;
-    span.t, span.t4, span.t2, span.t3  {
+    span.t,
+    span.t4,
+    span.t2,
+    span.t3 {
         display: block;
     }
-    span.t3{
+    span.t3 {
         color: #9CA5A7;
         font-size: 11px;
-}
-    span.t4{
+    }
+    span.t4 {
         font-size: 11px;
-        span{
+        span {
             margin-left: 7px;
         }
     }
-    .ymaps-2-1-38-balloon, .ymaps-2-1-38-balloon__layout{
+    .ymaps-2-1-38-balloon,
+    .ymaps-2-1-38-balloon__layout {
         border-radius: 5px;
         background: #EFF8FA;
     }
-    .ymaps-2-1-38-balloon__layout, .ymaps-2-1-38-balloon__content, .ymaps-2-1-38-balloon__tail:after{
+    .ymaps-2-1-38-balloon__layout,
+    .ymaps-2-1-38-balloon__content,
+    .ymaps-2-1-38-balloon__tail:after {
         background: #EFF8FA;
     }
 }
@@ -2271,7 +2296,7 @@ select.form-control {
         opacity: .4;
     }
 }
-.wrap-r #map{
+.wrap-r #map {
     height: 550px;
 }
 @import "responsive";

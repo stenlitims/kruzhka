@@ -154,6 +154,12 @@
     }
 }
 @media (max-width: 992px) {
+    .header .top-line{
+        transition: all .4s ease-in-out;
+    }
+    .header .top-line.active{
+        background: #F4F4F4;
+    }
     .list-actions {
         margin: 20px 15px 0;
         .item {
