@@ -1579,7 +1579,7 @@ h2 {
     margin: 7px 0 0 36px;
     &:before{
         content: "";
-        transition: all .5s ease-in-out;
+       // transition: all .5s ease-in-out;
     }
 }
 .header .navbar-toggle.active {
