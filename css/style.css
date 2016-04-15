@@ -1366,10 +1366,10 @@ h2 {
   content: "×";
   line-height: 1;
   font-family: sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   line-height: 46px;
   position: absolute;
-  top: -3px;
+  top: -7px;
   left: 9px;
   color: #000; }
 
@@ -2057,7 +2057,8 @@ textarea.form-control {
     display: block; }
   .wrap {
     padding-bottom: 160px; }
-    .wrap.no-bp, .wrap.home {
+    .wrap.no-bp,
+    .wrap.home {
       padding-bottom: 0; }
   .list-adress .item .link {
     text-align: left; }
@@ -2094,14 +2095,14 @@ textarea.form-control {
   .top-line {
     position: relative; }
   .main-nav {
-    visibility: hidden;
     position: absolute;
     z-index: 20;
     left: 0;
     right: 0;
     padding: 28px 20px 1px;
     top: 88px;
-    background: #F4F4F4; }
+    background: #F4F4F4;
+    display: none; }
     .main-nav .fa {
       display: none; }
     .main-nav ul li {
@@ -2140,7 +2141,9 @@ textarea.form-control {
     padding: 0 2px; }
     .interer .list a img {
       display: block;
-      max-width: 100%; } }
+      max-width: 100%; }
+  .show-t {
+    display: block !important; } }
 
 @media all and (max-width: 992px) and (min-width: 767px) {
   .adr-left {
@@ -2358,7 +2361,8 @@ textarea.form-control {
     .years .col-md-6 .y {
       display: block;
       margin: 0px 0 25px; }
-  .trans-list .item .time, .trans-list .item .title {
+  .trans-list .item .time,
+  .trans-list .item .title {
     font-size: 12px; }
   .trans-list .item .icons span img {
     max-height: 28px; }

@@ -105,6 +105,7 @@ $(document).ready(function () {
     $('.navbar-toggle').on('click', function () {
         $(this).toggleClass('active');
         $('.header .top-line').toggleClass('active');
+        $('.main-nav').toggleClass('show-t');
     });
 
     $(document).on('click', '.form-group .add-more a', function () {

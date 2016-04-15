@@ -12,7 +12,7 @@
         margin-bottom: 10px;
     }
     .main-row .info-item .text {
-      //  height: inherit;
+        //  height: inherit;
         margin-right: -10px;
     }
 }
@@ -154,12 +154,11 @@
     }
 }
 @media (max-width: 992px) {
-    
-    .header .top-line{
+    .header .top-line {
         transition: all .4s ease-in-out;
     }
-    .header .top-line.active{
-    //    background: #F4F4F4;
+    .header .top-line.active {
+        //    background: #F4F4F4;
     }
     .list-actions {
         margin: 20px 15px 0;
@@ -176,7 +175,7 @@
                     width: 100%;
                 }
             }
-            .inf{
+            .inf {
                 opacity: 1;
             }
         }
@@ -192,7 +191,8 @@
     }
     .wrap {
         padding-bottom: 160px;
-        &.no-bp, &.home{
+        &.no-bp,
+        &.home {
             padding-bottom: 0;
         }
     }
@@ -246,7 +246,7 @@
         position: relative;
     }
     .main-nav {
-        visibility: hidden;
+        //  visibility: hidden;
         position: absolute;
         z-index: 20;
         left: 0;
@@ -254,6 +254,7 @@
         padding: 28px 20px 1px;
         top: 88px;
         background: #F4F4F4;
+        display: none;
         .fa {
             display: none;
         }
@@ -310,6 +311,9 @@
             max-width: 100%;
         }
     }
+    .show-t {
+        display: block !important;
+    }
 }
 @media all and (max-width: 992px) and (min-width: 767px) {
     .adr-left {
@@ -333,11 +337,10 @@
     }
 }
 @media (max-width: 767px) {
-
-    .list-actions{
+    .list-actions {
         margin-top: 0;
     }
-    .m-content .info-bl .price{
+    .m-content .info-bl .price {
         font-size: 40px;
     }
     .list-adress {
@@ -593,31 +596,32 @@
     .adr-one .list-events {
         margin-top: 60px;
     }
-    .years{
-        .col-md-6{
+    .years {
+        .col-md-6 {
             float: left;
             width: 50%;
-            .y{
+            .y {
                 display: block;
                 margin: 0px 0 25px;
             }
         }
     }
-    .trans-list .item .time, .trans-list .item .title{
+    .trans-list .item .time,
+    .trans-list .item .title {
         font-size: 12px;
     }
-    .trans-list .item .icons span img{
+    .trans-list .item .icons span img {
         max-height: 28px;
     }
-    .trans-list .item .icons span{
+    .trans-list .item .icons span {
         width: 30px;
     }
-    .home .list .num{
+    .home .list .num {
         font-size: 50px;
     }
 }
 @media (max-width: 394px) {
-    .trans-list .item .title{
+    .trans-list .item .title {
         margin-top: 7px;
     }
     .page-inner h1,
