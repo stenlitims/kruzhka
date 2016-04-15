@@ -71,6 +71,10 @@ $(document).ready(function () {
             }
         });
     }
+    if ($(window).width() < 768 && $('#map').length > 0) {
+        var he = $(window).height();
+        $('#map').height(he - 50 + 'px');
+    }
 
     $('.list-sch').perfectScrollbar();
     $('.list-adress').perfectScrollbar();

@@ -1926,7 +1926,6 @@ textarea.form-control {
   .main-row .info-item .icons {
     margin-bottom: 10px; }
   .main-row .info-item .text {
-    height: inherit;
     margin-right: -10px; } }
 
 @media all and (max-width: 1300px) and (min-width: 992px) {
@@ -2021,8 +2020,6 @@ textarea.form-control {
 @media (max-width: 992px) {
   .header .top-line {
     transition: all 0.4s ease-in-out; }
-  .header .top-line.active {
-    background: #F4F4F4; }
   .list-actions {
     margin: 20px 15px 0; }
     .list-actions .item {
@@ -2044,8 +2041,8 @@ textarea.form-control {
     display: block; }
   .wrap {
     padding-bottom: 160px; }
-  .wrap.home {
-    padding-bottom: 0px; }
+    .wrap.no-bp, .wrap.home {
+      padding-bottom: 0; }
   .list-adress .item .link {
     text-align: left; }
   .list-adress .item .graf span {
@@ -2335,12 +2332,26 @@ textarea.form-control {
       margin: 0; }
   .adr-left {
     margin-bottom: 4px; }
-  .wrap-r #map {
+  #map {
     height: 300px; }
   .adr-one .list-events {
-    margin-top: 60px; } }
+    margin-top: 60px; }
+  .years .col-md-6 {
+    float: left;
+    width: 50%; }
+    .years .col-md-6 .y {
+      display: block;
+      margin: 0px 0 25px; }
+  .trans-list .item .time, .trans-list .item .title {
+    font-size: 12px; }
+  .trans-list .item .icons span img {
+    max-height: 28px; }
+  .trans-list .item .icons span {
+    width: 30px; } }
 
 @media (max-width: 394px) {
+  .trans-list .item .title {
+    margin-top: 7px; }
   .page-inner h1,
   .page-inner .adr-h {
     font-size: 30px; }
