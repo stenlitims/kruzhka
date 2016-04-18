@@ -72,7 +72,7 @@ a:focus {
         background-repeat: no-repeat;
         min-height: 500px;
         .top-line {
-            background: rgba(0, 0, 0, .3);
+            background: rgba(0, 0, 0, .8);
             border-bottom: none;
         }
         .navbar-toggle {
@@ -1601,7 +1601,7 @@ h2 {
     &:before {
         content: "";
         position: absolute;
-        background: #F4F4F4;
+        background: #F7F5F4;
         top: -20px;
         width: 80px;
         height: 90px;
@@ -2139,6 +2139,7 @@ select.form-control {
 }
 .interer {
     margin-top: 98px;
+
     .t {
         color: #a4a4a4;
         margin-bottom: 10px;
@@ -2148,11 +2149,17 @@ select.form-control {
             font-family: $acrom;
         }
     }
-    .list {}
-    a {
-        margin: 5px 3px;
-        display: inline-block;
-        &:hover {}
+    .list {
+            > a{
+                padding: 0 2px;
+                margin: 4px 0;
+        display: block;
+        float: left;
+        width: 33.33%;
+        img{
+            width: 100%;
+        }
+    }
     }
     img {}
 }

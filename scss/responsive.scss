@@ -102,7 +102,7 @@
 }
 @media (min-width: 1440px) {
     .header .logo {
-        margin-right: 62px;
+        // margin-right: 62px;
     }
     .home .header {
         font-size: 16px;
@@ -116,7 +116,11 @@
         height: 140px;
     }
 }
-@media (max-width: 1400px) {}
+@media (max-width: 1400px) {
+    .header .btn-bron {
+        padding: 12px;
+    }
+}
 @media (max-width: 1200px) {
     .main-nav.collapse {
         display: block;
@@ -137,6 +141,7 @@
     }
     .modal-art {
         width: 80%;
+        right: -80%;
         &.active {}
     }
     .modal-mask {
@@ -154,6 +159,11 @@
     }
 }
 @media (max-width: 992px) {
+    .m-content {
+        h1 {
+            font-size: 46px;
+        }
+    }
     .header .top-line {
         transition: all .4s ease-in-out;
     }
@@ -253,7 +263,7 @@
         right: 0;
         padding: 28px 20px 1px;
         top: 88px;
-        background: #F4F4F4;
+        background: #F7F5F4;
         display: none;
         .fa {
             display: none;
@@ -265,7 +275,7 @@
     }
     .home {
         .main-nav {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.8);
             .fa {
                 display: inline-block;
             }
@@ -313,6 +323,22 @@
     }
     .show-t {
         display: block !important;
+    }
+}
+@media all and (max-width: 1440px) and (min-width: 1200px) {
+    .modal-art{
+        width: 60%;
+        right: -60%;
+    }
+    .modal-mask.active .close{
+        right: 60%;
+    }
+}
+@media all and (max-width: 1200px) and (min-width: 992px) {
+    .r-nav {
+        margin-left: 26px;
+        width: inherit;
+        float: none;
     }
 }
 @media all and (max-width: 992px) and (min-width: 767px) {
@@ -578,13 +604,15 @@
         min-height: inherit;
     }
     .adr-left .btn {
-        display: none;
+        margin: 10px 0;
     }
     .interer {
         margin-top: 42px;
         .list a {
             padding: 0;
             margin: 0;
+            width: inherit;
+            img {}
         }
     }
     .adr-left {
@@ -633,5 +661,12 @@
     }
     .map-wrap .heading .tabs a {
         padding: 8px 15px;
+    }
+    .interer {
+        .list a {
+            img {
+                max-height: 94px;
+            }
+        }
     }
 }

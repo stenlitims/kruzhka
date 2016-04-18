@@ -110,7 +110,7 @@ a:focus {
   background-repeat: no-repeat;
   min-height: 500px; }
   .home .header .top-line {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.8);
     border-bottom: none; }
   .home .header .navbar-toggle .icon-bar {
     background: #fff; }
@@ -1376,7 +1376,7 @@ h2 {
 .header .navbar-toggle.active:before {
   content: "";
   position: absolute;
-  background: #F4F4F4;
+  background: #F7F5F4;
   top: -20px;
   width: 80px;
   height: 90px;
@@ -1794,9 +1794,14 @@ textarea.form-control {
       color: #000000;
       font-weight: 900;
       font-family: "Acrom"; }
-  .interer a {
-    margin: 5px 3px;
-    display: inline-block; }
+  .interer .list > a {
+    padding: 0 2px;
+    margin: 4px 0;
+    display: block;
+    float: left;
+    width: 33.33%; }
+    .interer .list > a img {
+      width: 100%; }
 
 .list-actions {
   margin-bottom: 100px; }
@@ -2001,8 +2006,6 @@ textarea.form-control {
     width: 1300px; } }
 
 @media (min-width: 1440px) {
-  .header .logo {
-    margin-right: 62px; }
   .home .header {
     font-size: 16px; }
   .home .slogon {
@@ -2011,6 +2014,10 @@ textarea.form-control {
     width: 1100px;
     margin-left: -550px;
     height: 140px; } }
+
+@media (max-width: 1400px) {
+  .header .btn-bron {
+    padding: 12px; } }
 
 @media (max-width: 1200px) {
   .main-nav.collapse {
@@ -2024,7 +2031,8 @@ textarea.form-control {
   .calendar-wrap {
     margin-left: 0; }
   .modal-art {
-    width: 80%; }
+    width: 80%;
+    right: -80%; }
   .modal-mask.active .close {
     right: 80%; } }
 
@@ -2034,6 +2042,8 @@ textarea.form-control {
     text-align: center; } }
 
 @media (max-width: 992px) {
+  .m-content h1 {
+    font-size: 46px; }
   .header .top-line {
     transition: all 0.4s ease-in-out; }
   .list-actions {
@@ -2101,7 +2111,7 @@ textarea.form-control {
     right: 0;
     padding: 28px 20px 1px;
     top: 88px;
-    background: #F4F4F4;
+    background: #F7F5F4;
     display: none; }
     .main-nav .fa {
       display: none; }
@@ -2109,7 +2119,7 @@ textarea.form-control {
       display: block;
       margin-bottom: 28px; }
   .home .main-nav {
-    background: rgba(0, 0, 0, 0.3); }
+    background: rgba(0, 0, 0, 0.8); }
     .home .main-nav .fa {
       display: inline-block; }
   .home .slogon {
@@ -2144,6 +2154,19 @@ textarea.form-control {
       max-width: 100%; }
   .show-t {
     display: block !important; } }
+
+@media all and (max-width: 1440px) and (min-width: 1200px) {
+  .modal-art {
+    width: 60%;
+    right: -60%; }
+  .modal-mask.active .close {
+    right: 60%; } }
+
+@media all and (max-width: 1200px) and (min-width: 992px) {
+  .r-nav {
+    margin-left: 26px;
+    width: inherit;
+    float: none; } }
 
 @media all and (max-width: 992px) and (min-width: 767px) {
   .adr-left {
@@ -2343,12 +2366,13 @@ textarea.form-control {
   .adr-left .inf {
     min-height: inherit; }
   .adr-left .btn {
-    display: none; }
+    margin: 10px 0; }
   .interer {
     margin-top: 42px; }
     .interer .list a {
       padding: 0;
-      margin: 0; }
+      margin: 0;
+      width: inherit; }
   .adr-left {
     margin-bottom: 4px; }
   #map {
@@ -2380,6 +2404,8 @@ textarea.form-control {
   .adr-one .list-events .h2 {
     font-size: 20px; }
   .map-wrap .heading .tabs a {
-    padding: 8px 15px; } }
+    padding: 8px 15px; }
+  .interer .list a img {
+    max-height: 94px; } }
 
 /*# sourceMappingURL=style.css.map */
