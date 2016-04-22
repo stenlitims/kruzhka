@@ -110,7 +110,7 @@ a:focus {
   background-repeat: no-repeat;
   min-height: 500px; }
   .home .header .top-line {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
     border-bottom: none; }
   .home .header .navbar-toggle .icon-bar {
     background: #fff; }
@@ -1798,10 +1798,7 @@ textarea.form-control {
     padding: 0 2px;
     margin: 4px 0;
     display: block;
-    float: left;
-    width: 33.33%; }
-    .interer .list > a img {
-      width: 100%; }
+    float: left; }
 
 .list-actions {
   margin-bottom: 100px; }
@@ -2020,6 +2017,10 @@ textarea.form-control {
     padding: 12px; } }
 
 @media (max-width: 1200px) {
+  .interer .list > a {
+    width: 33.33%; }
+    .interer .list > a img {
+      width: 100%; }
   .main-nav.collapse {
     display: block; }
   .btn {
@@ -2181,6 +2182,7 @@ textarea.form-control {
       width: 50%;
       margin-top: 60px; }
     .adr-left .btn {
+      display: none;
       position: absolute;
       top: -68px;
       right: 15px; } }

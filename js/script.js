@@ -125,5 +125,7 @@ $(document).ready(function () {
     $('.big-img .to-back .btn').on('click', function () {
         $('.big-img').fadeOut(200);
     });
+    
+  
 
 });

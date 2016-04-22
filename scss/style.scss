@@ -72,7 +72,7 @@ a:focus {
         background-repeat: no-repeat;
         min-height: 500px;
         .top-line {
-            background: rgba(0, 0, 0, .8);
+            background: rgba(0, 0, 0, .3);
             border-bottom: none;
         }
         .navbar-toggle {
@@ -2155,9 +2155,9 @@ select.form-control {
                 margin: 4px 0;
         display: block;
         float: left;
-        width: 33.33%;
+      //  width: 33.33%;
         img{
-            width: 100%;
+      ///      width: 100%;
         }
     }
     }

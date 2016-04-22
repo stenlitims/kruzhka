@@ -122,6 +122,12 @@
     }
 }
 @media (max-width: 1200px) {
+        .interer .list > a{
+        width: 33.33%;
+        img{
+            width: 100%;
+        }
+    }
     .main-nav.collapse {
         display: block;
     }
@@ -159,6 +165,7 @@
     }
 }
 @media (max-width: 992px) {
+
     .m-content {
         h1 {
             font-size: 46px;
@@ -342,6 +349,7 @@
     }
 }
 @media all and (max-width: 992px) and (min-width: 767px) {
+    
     .adr-left {
         margin-bottom: 5px;
         position: relative;
@@ -356,6 +364,7 @@
             margin-top: 60px;
         }
         .btn {
+            display: none;
             position: absolute;
             top: -68px;
             right: 15px;
