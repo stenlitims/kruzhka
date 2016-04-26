@@ -116,15 +116,29 @@
         height: 140px;
     }
 }
+@media (max-width: 1500px) {
+    .calendar-wrap {
+        margin-left: 0;
+    }
+}
 @media (max-width: 1400px) {
     .header .btn-bron {
         padding: 12px;
     }
 }
 @media (max-width: 1200px) {
-        .interer .list > a{
+    .calendar-wrap .table tr td {
+        width: 42px;
+        height: 42px;
+        &.active {
+            span {
+                line-height: 40px;
+            }
+        }
+    }
+    .interer .list > a {
         width: 33.33%;
-        img{
+        img {
             width: 100%;
         }
     }
@@ -165,7 +179,19 @@
     }
 }
 @media (max-width: 992px) {
-
+    .calendar-wrap {
+        max-width: 360px;
+        margin: 0 auto;
+        .table tr td {
+            width: 52px;
+            height: 52px;
+            &.active {
+                span {
+                    line-height: 50px;
+                }
+            }
+        }
+    }
     .m-content {
         h1 {
             font-size: 46px;
@@ -333,23 +359,26 @@
     }
 }
 @media all and (max-width: 1440px) and (min-width: 1200px) {
-    .modal-art{
+    .modal-art {
         width: 60%;
         right: -60%;
     }
-    .modal-mask.active .close{
+    .modal-mask.active .close {
         right: 60%;
     }
 }
 @media all and (max-width: 1200px) and (min-width: 992px) {
     .r-nav {
-        margin-left: 26px;
+        margin-left: 0;
+        &.fix {
+            margin-left: 0;
+            width: 250px;
+        }
         width: inherit;
         float: none;
     }
 }
 @media all and (max-width: 992px) and (min-width: 767px) {
-    
     .adr-left {
         margin-bottom: 5px;
         position: relative;
@@ -372,6 +401,9 @@
     }
 }
 @media (max-width: 767px) {
+    .metro {
+        height: 400px;
+    }
     .list-actions {
         margin-top: 0;
     }
@@ -613,7 +645,7 @@
         min-height: inherit;
     }
     .adr-left .btn {
-        margin: 10px 0;
+        margin: 30px 0 10px;
     }
     .interer {
         margin-top: 42px;
@@ -673,9 +705,9 @@
     }
     .interer {
         .list a {
-            img {
-                max-height: 94px;
-            }
+            width: 33.3%;
+            padding: 0;
+            img {}
         }
     }
 }

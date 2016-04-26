@@ -103,13 +103,13 @@
                                         myMap = new ymaps.Map("map", {
                                             center: [55.75396, 37.620393],
                                             zoom: 13,
-                                            //  controls: []
+                                            controls: ['zoomControl', 'searchControl',  'fullscreenControl']
                                         });
                                         var myIconContentLayout = ymaps.templateLayoutFactory.createClass('<div class="square_layout"></div>');
                                         var squarePlacemark = new ymaps.Placemark(
                                             [55.75396, 37.620393], {
                                                 hintContent: 'Метка ',
-                                                balloonContent: '<span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span>'
+                                                balloonContent: '<span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>'
                                             }, {
                                                 iconLayout: myIconContentLayout,
                                                 iconShape: {
