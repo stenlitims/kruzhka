@@ -69,7 +69,7 @@
             <div class="row adr-wrap">
                 <div class="col-sm-4">
                     <div class="list-adress">
-                        <div class="item active">
+                        <div class="item active" data-id="1">
                             <div class="title">
                                 <div class="ico"></div> АЛТУФЬЕВО</div>
                             <div class="adr">Лескова ул, 3Г</div>
@@ -77,7 +77,7 @@
                             <div class="phone">+7 (299) 909-09-25</div>
                             <div class="link"><a href="#">СТРАНИЦА БАРА <i class="fa fa-caret-right"></i></a></div>
                         </div>
-                        <div class="item">
+                        <div class="item" data-id="2">
                             <div class="title">
                                 <div class="ico green"></div> АЛТУФЬЕВО</div>
                             <div class="adr">Лескова ул, 3Г</div>
@@ -85,7 +85,7 @@
                             <div class="phone">+7 (299) 909-09-25</div>
                             <div class="link"><a href="#">СТРАНИЦА БАРА <i class="fa fa-caret-right"></i></a></div>
                         </div>
-                        <div class="item">
+                        <div class="item" data-id="3">
                             <div class="title">
                                 <div class="ico pink"></div> АЛТУФЬЕВО</div>
                             <div class="adr">Лескова ул, 3Г</div>
@@ -93,7 +93,7 @@
                             <div class="phone">+7 (299) 909-09-25</div>
                             <div class="link"><a href="#">СТРАНИЦА БАРА <i class="fa fa-caret-right"></i></a></div>
                         </div>
-                        <div class="item">
+                        <div class="item" data-id="4">
                             <div class="title">
                                 <div class="ico red"></div> АЛТУФЬЕВО</div>
                             <div class="adr">Лескова ул, 3Г</div>
@@ -101,7 +101,7 @@
                             <div class="phone">+7 (299) 909-09-25</div>
                             <div class="link"><a href="#">СТРАНИЦА БАРА <i class="fa fa-caret-right"></i></a></div>
                         </div>
-                        <div class="item">
+                        <div class="item" data-id="5">
                             <div class="title">
                                 <div class="ico"></div> АЛТУФЬЕВО</div>
                             <div class="adr">Лескова ул, 3Г</div>
@@ -130,24 +130,81 @@
                         </div>
 
 
+
+
                         <div id="js-map" class="map tab-map-item" style="display:block">
                             <!-- <img src="images/big-map.jpg" class="img-responsive" alt=""> -->
                             <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
                             <script type="text/javascript">
+                                var itemsDetector = [{
+                                    id: 1,
+                                    center: [55.898719139733, 37.591676504299],
+                                    name: 'АЛТУФЬЕВО',
+                                    title: 'ул. Лескова, 3Г',
+                                    detailUrl: '/addresses/map/detail/?ID=533',
+                                    hours: 'вс-чт 12.00-24.00 пт,сб 12.00-04.00',
+                                    phone: '+7 (499) 909-09-25<br/>бесплатный WIFI'
+                                }, {
+                                    id: 2,
+                                    center: [55.759390543941, 37.57995945998],
+                                    name: 'АЛТУФЬЕВО',
+                                    title: 'ул. Лескова, 3Г',
+                                    detailUrl: '/addresses/map/detail/?ID=533',
+                                    hours: 'вс-чт 12.00-24.00 пт,сб 12.00-04.00',
+                                    phone: '+7 (499) 909-09-25<br/>бесплатный WIFI'
+                                }, {
+                                    id: 3,
+                                    center: [55.771538546162, 37.682178046627],
+                                    name: 'АЛТУФЬЕВО',
+                                    title: 'ул. Лескова, 3Г',
+                                    detailUrl: '/addresses/map/detail/?ID=533',
+                                    hours: 'вс-чт 12.00-24.00 пт,сб 12.00-04.00',
+                                    phone: '+7 (499) 909-09-25<br/>бесплатный WIFI'
+                                }, {
+                                    id: 4,
+                                    center: [55.641898762138, 37.523496233135],
+                                    name: 'АЛТУФЬЕВО',
+                                    title: 'ул. Лескова, 3Г',
+                                    detailUrl: '/addresses/map/detail/?ID=533',
+                                    hours: 'вс-чт 12.00-24.00 пт,сб 12.00-04.00',
+                                    phone: '+7 (499) 909-09-25<br/>бесплатный WIFI'
+                                }, {
+                                    id: 5,
+                                    center: [55.806859154746, 37.50287040741],
+                                    name: 'АЛТУФЬЕВО',
+                                    title: 'ул. Лескова, 3Г',
+                                    detailUrl: '/addresses/map/detail/?ID=533',
+                                    hours: 'вс-чт 12.00-24.00 пт,сб 12.00-04.00',
+                                    phone: '+7 (499) 909-09-25<br/>бесплатный WIFI'
+                                }]
+
+
+
                                 ymaps.ready(init);
                                 var myMap;
 
                                 function init() {
+
                                     myMap = new ymaps.Map("map", {
                                         center: [55.75396, 37.620393],
                                         zoom: 13,
                                         controls: ['zoomControl', 'searchControl', 'fullscreenControl']
                                     });
                                     var myIconContentLayout = ymaps.templateLayoutFactory.createClass('<div class="square_layout"></div>');
-                                    var squarePlacemark = new ymaps.Placemark(
-                                        [55.75396, 37.620393], {
-                                            hintContent: 'Метка ',
-                                            balloonContent: '<span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>'
+
+
+                                    var tpl = function(data) {
+                                        var out = '<span clas="t">' + data.name + '</span>' +
+                                            '<span class="t2">' + data.title + '</span>' +
+                                            '<span class="t3">' + data.hours + '</span>' +
+                                            '<span class="t4">' + data.phone + '</span>' +
+                                            '<a href="' + data.detailUrl + '">Страница бара <i class="fa fa-caret-right"></i></a>';
+                                        return out;
+                                    }
+                                    var placemark = [];
+                                    var createIco = function(item) {
+                                        placemark[item.id] = new ymaps.Placemark(item.center, {
+                                            balloonContent: tpl(item)
                                         }, {
                                             iconLayout: myIconContentLayout,
                                             iconShape: {
@@ -157,10 +214,23 @@
                                                     [32, 34]
                                                 ]
                                             }
-                                        }
-                                    );
-
-                                    myMap.geoObjects.add(squarePlacemark);
+                                        });
+                                        myMap.geoObjects.add(placemark[item.id]);
+                                    }
+                                    for (var j = 0, m = itemsDetector.length; j < m; j++) {
+                                        createIco(itemsDetector[j]);
+                                    }
+                                    
+                                    $(document).on('click', '.list-adress .item', function(){
+                                        $('.list-adress .item').removeClass('active');
+                                        $(this).addClass('active');
+                                        var id = $(this).data('id');
+                                        placemark[id].balloon.open();
+                                        
+                                        $('#metro1 .metka').removeClass('active');
+                                        $('#metka'+id).addClass('active');
+                                    });
+                                    
                                     myMap.behaviors.disable('scrollZoom');
                                 }
 
@@ -171,57 +241,57 @@
                         <div id="js-metro" class="metro-wrap tab-map-item">
                             <div class="metro">
                                 <div id="metro1" class="ui-draggable ui-draggable-handle">
-                                    <div class="metka" style="top:15.1%; left:1.6%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka1" style="top:15.1%; left:1.6%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top: 23.0%;left: 12.3%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka2" style="top: 23.0%;left: 12.3%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top: 9.2%;left: 24%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka3" style="top: 9.2%;left: 24%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top: 13.7%;left: 24%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka4" style="top: 13.7%;left: 24%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top:16.9%; left:24%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka5" style="top:16.9%; left:24%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top:20.1%; left:24%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka6" style="top:20.1%; left:24%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top:1.7%; left:35.8%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka7" style="top:1.7%; left:35.8%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
-                                    <div class="metka" style="top:5.6%; left:35.8%;">
-                                       <i class="ico-map"></i>
+                                    <div class="metka" id="metka8" style="top:5.6%; left:35.8%;">
+                                        <i class="ico-map"></i>
                                         <div class="al">
                                             <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>

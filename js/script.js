@@ -93,14 +93,17 @@ $(document).ready(function () {
 
     if ($('.metro').length > 0) {
         $('#metro1').draggable({
-            drag: function (event, ui) {
-                
-                ui.position.left = Math.min(600, ui.position.left);
-                ui.position.top = Math.min(600, ui.position.top);
-                if(Math.min(500, ui.position.top) < -500) ui.position.top = -500;
-                if(Math.min(500, ui.position.left) < -500) ui.position.left = -500;
+                drag: function (event, ui) {
+                    var tempWi = $(event.target).width() - $('.metro').width(),
+                        tempHe = $(event.target).height() - $('.metro').height();
+                    if (ui.position.left < -tempWi) ui.position.left = -tempWi;
+                    if (ui.position.left > 60) ui.position.left = 60;
+                    if (ui.position.top < -tempHe) ui.position.top = -tempHe;
+                    if (ui.position.top > 120) ui.position.top = 120;
+                }
             }
-        });
+        );
+
         $('.tools a').on('click', function () {
             var wi = $('#metro1').width();
             // console.log(wi);
@@ -121,12 +124,12 @@ $(document).ready(function () {
                 }
             }
         });
-        $('#metro1 .ico-map').on('click', function(){
+        $('#metro1 .ico-map').on('click', function () {
             $('#metro1 .metka').removeClass('active');
             $(this).parent().addClass('active');
         });
-        $('#metro1 .metka .cl').on('click', function(){
-           $('#metro1 .metka').removeClass('active'); 
+        $('#metro1 .metka .cl').on('click', function () {
+            $('#metro1 .metka').removeClass('active');
         });
     }
 
