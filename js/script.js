@@ -32,12 +32,28 @@ $(document).ready(function () {
             e.preventDefault();
         })
     }
-    if ($('.js-menu-nav').length > 0) {
+    if ($('.r-nav.fix').length > 0) {
+        var cont = $('.left-content'),
+            contH = cont.height(),
+            contPos = cont.position();
         $(window).scroll(function () {
-            if ($(window).scrollTop() > 300) {
-                $('.js-menu-nav').addClass('fix');
+            if ($(window).scrollTop() > contPos.top) {
+                //console.log((($(window).scrollTop() - contPos.top) + $('.r-nav.fix').height()), contH);
+                if (contH > (($(window).scrollTop() - contPos.top) + $('.r-nav.fix').height())) {
+                    $('.r-nav.fix').css('top', ($(window).scrollTop() - contPos.top) + 15 + 'px');
+                }
             } else {
-                $('.js-menu-nav').removeClass('fix');
+                $('.r-nav.fix').css('top', 0);
+            }
+        });
+    }
+    if ($('.js-mobile-nav').length > 0) {
+        $('.mobile-nav-wrap').css('height',  $('.mobile-nav-wrap').height() + 'px');
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 89) {
+                $('.js-mobile-nav').addClass('fix');
+            } else {
+                $('.js-mobile-nav').removeClass('fix');
             }
         });
     }
@@ -59,7 +75,7 @@ $(document).ready(function () {
             loop: false,
             margin: 0,
             // items: 2,
-            autoHeight: true,
+            //autoHeight: true,
             center: true,
             responsive: {
                 0: {
@@ -84,64 +100,14 @@ $(document).ready(function () {
     }
     if ($(window).width() < 768 && $('#map').length > 0) {
         var he = $(window).height();
-        $('#map').height(he - 50 + 'px');
+        $('#map').height(he - 160 + 'px');
+        if ($('.metro').length > 0) {
+            $('.metro').height(he - 160 + 'px');
+        }
     }
 
     $('.list-sch').perfectScrollbar();
     $('.list-adress').perfectScrollbar();
-
-
-    if ($('.metro').length > 0) {
-        $('#metro1').draggable({
-                drag: function (event, ui) {
-                    var tempWi = $(event.target).width() - $('.metro').width(),
-                        tempHe = $(event.target).height() - $('.metro').height();
-                    if (ui.position.left < -tempWi) ui.position.left = -tempWi;
-                    if (ui.position.left > 60) ui.position.left = 60;
-                    if (ui.position.top < -tempHe) ui.position.top = -tempHe;
-                    if (ui.position.top > 120) ui.position.top = 120;
-                }
-            }
-        );
-
-        $('.tools a').on('click', function () {
-            var wi = $('#metro1').width();
-            // console.log(wi);
-            if ($(this).hasClass('plus')) {
-                if (wi < 1600) {
-                    $('#metro1').width(wi + 100);
-                    $('.tools .minus').removeClass('disabled');
-                } else {
-                    $('.tools .plus').addClass('disabled');
-                }
-            }
-            if ($(this).hasClass('minus')) {
-                if (wi > 700) {
-                    $('#metro1').width(wi - 100);
-                    $('.tools .plus').removeClass('disabled');
-                } else {
-                    $('.tools .minus').addClass('disabled');
-                }
-            }
-        });
-        $('#metro1 .ico-map').on('click', function () {
-            $('#metro1 .metka').removeClass('active');
-            $(this).parent().addClass('active');
-        });
-        $('#metro1 .metka .cl').on('click', function () {
-            $('#metro1 .metka').removeClass('active');
-        });
-    }
-
-    $('.js-tabs-map a').on('click', function (e) {
-        e.preventDefault();
-        var id = $(this).attr('href');
-        $('.js-tabs-map a').removeClass('active');
-        $(this).addClass('active');
-        $('.tab-map-item').hide();
-        $(id).show();
-    });
-
 
     $(document).on('click', '.list-events a, .list-items a, .open-modal', function (e) {
         e.preventDefault();

@@ -133,7 +133,6 @@
 
 
                         <div id="js-map" class="map tab-map-item" style="display:block">
-                            <!-- <img src="images/big-map.jpg" class="img-responsive" alt=""> -->
                             <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
                             <script type="text/javascript">
                                 var itemsDetector = [{
@@ -194,17 +193,17 @@
 
 
                                     var tpl = function(data) {
-                                        var out = '<span clas="t">' + data.name + '</span>' +
-                                            '<span class="t2">' + data.title + '</span>' +
+                                        var out = '<span class="t2">' + data.title + '</span>' +
                                             '<span class="t3">' + data.hours + '</span>' +
-                                            '<span class="t4">' + data.phone + '</span>' +
+                                            //     '<span class="t4">' + data.phone + '</span>' +
                                             '<a href="' + data.detailUrl + '">Страница бара <i class="fa fa-caret-right"></i></a>';
                                         return out;
                                     }
                                     var placemark = [];
                                     var createIco = function(item) {
                                         placemark[item.id] = new ymaps.Placemark(item.center, {
-                                            balloonContent: tpl(item)
+                                            balloonContent: tpl(item),
+                                            index: item.id
                                         }, {
                                             iconLayout: myIconContentLayout,
                                             iconShape: {
@@ -220,18 +219,135 @@
                                     for (var j = 0, m = itemsDetector.length; j < m; j++) {
                                         createIco(itemsDetector[j]);
                                     }
-                                    
-                                    $(document).on('click', '.list-adress .item', function(){
+
+                                    $(document).on('click', '.list-adress .item', function() {
                                         $('.list-adress .item').removeClass('active');
                                         $(this).addClass('active');
                                         var id = $(this).data('id');
                                         placemark[id].balloon.open();
-                                        
+
                                         $('#metro1 .metka').removeClass('active');
-                                        $('#metka'+id).addClass('active');
+                                        $('#metka' + id).addClass('active');
                                     });
-                                    
+
                                     myMap.behaviors.disable('scrollZoom');
+
+                                    myMap.geoObjects.events.add('click', function(e) {
+                                        var id = e.get('target').properties.get('index'),
+                                            item = $('.list-adress .item[data-id=' + id + ']');
+                                        $('.list-adress .item').removeClass('active');
+                                        item.addClass('active');
+                                        posItem(item);
+                                    });
+
+
+                                    $('#metro1').draggable({
+                                        drag: function(event, ui) {
+                                            var tempWi = ($(event.target).width() - $('.metro').width()) + 30,
+                                                tempHe = ($(event.target).height() - $('.metro').height()) + 30;
+                                            if (ui.position.left < -tempWi) ui.position.left = -tempWi;
+                                            if (ui.position.left > 60) ui.position.left = 60;
+                                            if (ui.position.top < -tempHe) ui.position.top = -tempHe;
+                                            if (ui.position.top > 60) ui.position.top = 60;
+                                        }
+                                    });
+
+
+                                    $(document).click(function(event) {
+                                        if (!$(event.target).is('.metka, .ico-map, .al, .al span, .al a, .item, .item div, .item a, .item span, ymaps span')) {
+                                            $('.metka').removeClass('active');
+                                            var id = $('.list-adress .item.active').data('id');
+                                            if (id) placemark[id].balloon.close();
+                                        }
+                                    });
+
+
+                                    var $container = $('.list-adress');
+                                    var posItem = function(item) {
+                                        var topPos = item.position().top;
+                                        if (topPos > 530) {
+                                            $container.scrollTop(520);
+                                            $container.perfectScrollbar('update');
+                                        }
+                                        if (topPos < 0) {
+                                            $container.scrollTop(0);
+                                            $container.perfectScrollbar('update');
+                                        }
+                                    }
+
+                                    var centerMap = function() {
+                                        if ($(window).width() < 780) {
+                                            var tWi = $('.metro').width(),
+                                                tHe = $('.metro').height(),
+                                                tWiIn = $('#metro1').width(),
+                                                tHeIn = $('#metro1').height(),
+                                                leftM = (tWiIn - tWi) / 2 + 15,
+                                                topM = (tHeIn - tHe) / 2;
+                                            console.log(tWiIn, tWi);
+                                            $('#metro1').css({
+                                                top: -topM + 'px',
+                                                left: -leftM + 'px'
+                                            });
+                                        }
+                                    }
+
+                                    var disabled = function(btn) {
+                                        var wi = $('#metro1').width();
+                                        if (wi >= 1600 && btn == 'plus') {
+                                            $('.tools .plus').addClass('disabled');
+                                            return false;
+                                        }
+                                        if (wi <= 800 && btn == 'minus') {
+                                            $('.tools .minus').addClass('disabled');
+                                            return false;
+                                        }
+                                        return true;
+                                    }
+
+                                    $('.tools a').on('click', function() {
+                                        var wi = $('#metro1').width();
+                                        if ($(this).hasClass('plus')) {
+                                            if (disabled('plus')) {
+                                                $('#metro1').width(wi + 100);
+                                                $('.tools .minus').removeClass('disabled');
+                                                disabled('plus');
+                                            }
+                                        }
+                                        if ($(this).hasClass('minus')) {
+                                            if (disabled('minus')) {
+                                                $('.tools .plus').removeClass('disabled');
+                                                $('#metro1').width(wi - 100);
+                                                disabled('minus');
+                                            }
+                                        }
+                                    });
+                                    $('#metro1 .ico-map').on('click', function() {
+                                        $('#metro1 .metka').removeClass('active');
+                                        $(this).parent().addClass('active');
+                                        var id = $(this).parent().attr('id').replace('metka', ''),
+                                            item = $('.list-adress .item[data-id=' + id + ']');
+                                        $('.list-adress .item').removeClass('active');
+                                        item.addClass('active');
+                                        posItem(item);
+                                    });
+                                    $('#metro1 .metka .cl').on('click', function() {
+                                        $('#metro1 .metka').removeClass('active');
+                                    });
+
+                                    $('.js-tabs-map a').on('click', function(e) {
+                                        e.preventDefault();
+                                        var id = $(this).attr('href');
+                                        $('.js-tabs-map a').removeClass('active');
+                                        $(this).addClass('active');
+                                        $('.tab-map-item').hide();
+                                        $(id).show();
+                                        if(id == '#js-metro'){
+                                            centerMap();
+                                        }
+                                    });
+
+
+
                                 }
 
                             </script>
@@ -244,56 +360,40 @@
                                     <div class="metka" id="metka1" style="top:15.1%; left:1.6%;">
                                         <i class="ico-map"></i>
                                         <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
+                                            <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span>
+                                            <a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
                                     <div class="metka" id="metka2" style="top: 23.0%;left: 12.3%;">
                                         <i class="ico-map"></i>
                                         <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
+                                            <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span>
+                                            <a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
                                     <div class="metka" id="metka3" style="top: 9.2%;left: 24%;">
                                         <i class="ico-map"></i>
                                         <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
+                                            <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span>
+                                            <a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
                                     <div class="metka" id="metka4" style="top: 13.7%;left: 24%;">
                                         <i class="ico-map"></i>
                                         <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
+                                            <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span>
+                                            <a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
                                     <div class="metka" id="metka5" style="top:16.9%; left:24%;">
                                         <i class="ico-map"></i>
                                         <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
-                                            <div class="cl"></div>
-                                        </div>
-                                    </div>
-                                    <div class="metka" id="metka6" style="top:20.1%; left:24%;">
-                                        <i class="ico-map"></i>
-                                        <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
-                                            <div class="cl"></div>
-                                        </div>
-                                    </div>
-                                    <div class="metka" id="metka7" style="top:1.7%; left:35.8%;">
-                                        <i class="ico-map"></i>
-                                        <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
-                                            <div class="cl"></div>
-                                        </div>
-                                    </div>
-                                    <div class="metka" id="metka8" style="top:5.6%; left:35.8%;">
-                                        <i class="ico-map"></i>
-                                        <div class="al">
-                                            <span clas="t">АЛТУФЬЕВО</span> <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span><span class="t4">+ 7 (495) 909-09-25 <span>wifi</span></span><a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
+                                            <span class="t2">Киевская площадь, 3 Г</span><span class="t3">Вc-ЧТ 12-24:00 Пт-Сб 12:00-04:00</span>
+                                            <a href="#">Страница бара <i class="fa fa-caret-right"></i></a>
                                             <div class="cl"></div>
                                         </div>
                                     </div>
@@ -303,7 +403,7 @@
                             </div>
                             <div class="tools">
                                 <a href="#" class="btn plus"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
-                                <a href="#" class="btn minus"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
+                                <a href="#" class="btn minus disabled"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
                             </div>
                         </div>
 

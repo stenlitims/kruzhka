@@ -821,15 +821,18 @@ a.btn-border:focus {
 .contact-block {
   float: right; }
   .footer-contact .phone,
-  .contact-block .phone {
+  .footer-contact .phone a,
+  .contact-block .phone,
+  .contact-block .phone a {
     font-size: 25px;
     font-weight: 300;
     font-family: "Acrom";
-    margin-bottom: 1px; }
+    margin-bottom: 1px;
+    color: #000; }
   .footer-contact a,
   .contact-block a {
     text-decoration: underline;
-    font-size: 11px;
+    font-size: 13px;
     text-transform: uppercase; }
     .footer-contact a:hover,
     .contact-block a:hover {
@@ -1120,7 +1123,7 @@ h2 {
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  z-index: 99;
+  z-index: 998;
   top: 0;
   bottom: 0;
   right: 0;
@@ -1251,10 +1254,10 @@ h2 {
   float: right; }
   .r-nav.fix {
     background: #fff;
-    position: fixed;
-    top: 10px;
+    position: absolute;
+    top: 0px;
+    right: 15px;
     float: none;
-    margin-left: 5%;
     width: 300px;
     z-index: 2; }
   .r-nav ul {
@@ -1284,12 +1287,22 @@ h2 {
       margin: 0 auto 20px;
       max-width: 200px; }
 
-.mobile-nav {
+.mobile-nav-wrap {
   margin-top: -50px;
+  margin-bottom: 50px; }
+
+.mobile-nav {
   padding: 30px 10px;
   border-bottom: 1px solid #E9E9E9;
-  margin-bottom: 50px;
   overflow-x: auto; }
+  .mobile-nav.fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: #fff;
+    z-index: 990; }
   .mobile-nav ul {
     margin: 0;
     padding: 0;
@@ -1909,7 +1922,7 @@ textarea.form-control {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #fff;
+  background: #F0F0F0;
   overflow: hidden;
   display: none; }
   .big-img .to-back {
@@ -1951,8 +1964,7 @@ textarea.form-control {
     font-family: 'ProximaNova';
     text-transform: uppercase;
     font-weight: bold;
-    display: inline-block;
-    margin-top: 5px; }
+    display: inline-block; }
     #map ymaps a .fa {
       margin-right: 2px; }
   #map .gotoymaps,
@@ -1987,8 +1999,9 @@ textarea.form-control {
     left: 16px;
     width: 50px; }
     .metro-wrap .tools .btn {
-      padding: 5px 10px;
-      margin: 8px 0px; }
+      padding: 9px 14px;
+      margin: 8px 0px;
+      font-size: 18px; }
 
 #metro1 {
   width: 800px;
@@ -2052,8 +2065,7 @@ textarea.form-control {
         font-family: 'ProximaNova';
         text-transform: uppercase;
         font-weight: bold;
-        display: inline-block;
-        margin-top: 5px; }
+        display: inline-block; }
         #metro1 .metka .al a .fa {
           margin-right: 2px; }
     #metro1 .metka.active {
@@ -2067,6 +2079,7 @@ textarea.form-control {
     display: block; }
 
 .tab-map-item {
+  border: solid 1px #f4f4f4;
   display: none; }
 
 @media all and (max-width: 1300px) and (min-width: 1110px) {
@@ -2166,8 +2179,6 @@ textarea.form-control {
     width: 33.33%; }
     .interer .list > a img {
       width: 100%; }
-  .main-nav.collapse {
-    display: block; }
   .btn {
     font-size: 13px; }
   .main-row .info-item .text {
@@ -2188,6 +2199,8 @@ textarea.form-control {
     text-align: center; } }
 
 @media (max-width: 992px) {
+  .main-row {
+    border-bottom: none; }
   .calendar-wrap {
     max-width: 360px;
     margin: 0 auto; }
@@ -2344,6 +2357,11 @@ textarea.form-control {
       right: 15px; } }
 
 @media (max-width: 767px) {
+  #metro1 {
+    width: 700px;
+    position: relative;
+    left: -174px;
+    top: -137px; }
   .metro {
     height: 400px; }
   .list-actions {
@@ -2465,7 +2483,7 @@ textarea.form-control {
   .list-items {
     margin-left: -16px;
     margin-right: -16px; }
-  .mobile-nav {
+  .mobile-nav, .mobile-nav-wrap {
     margin: 0; }
   .title-cat .fill-cat {
     margin-left: -5px;
@@ -2477,7 +2495,8 @@ textarea.form-control {
     font-size: 30px; }
   .news-one h1 {
     font-size: 30px; }
-  .map-wrap .map {
+  .map-wrap .map,
+  .metro-wrap {
     margin-left: -15px;
     margin-right: -15px; }
   .time-wrap {
@@ -2494,7 +2513,7 @@ textarea.form-control {
     margin-top: 10px; }
     .map-wrap .heading .title {
       margin: 5px 0 0 0;
-      font-size: 12px;
+      font-size: 13px;
       margin-right: -5px; }
     .map-wrap .heading .row {
       margin: 0; }
@@ -2556,6 +2575,8 @@ textarea.form-control {
     font-size: 50px; } }
 
 @media (max-width: 394px) {
+  .adr-one .list-jobs .title {
+    font-size: 20px; }
   .trans-list .item .title {
     margin-top: 7px; }
   .page-inner h1,
