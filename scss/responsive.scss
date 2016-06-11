@@ -143,7 +143,7 @@
         }
     }
     .main-nav.collapse {
-     //   display: block;
+        //   display: block;
     }
     .btn {
         font-size: 13px;
@@ -179,7 +179,7 @@
     }
 }
 @media (max-width: 992px) {
-    .main-row{
+    .main-row {
         border-bottom: none;
     }
     .calendar-wrap {
@@ -571,7 +571,8 @@
         margin-left: -16px;
         margin-right: -16px;
     }
-    .mobile-nav, .mobile-nav-wrap {
+    .mobile-nav,
+    .mobile-nav-wrap {
         margin: 0;
     }
     .title-cat .fill-cat {
@@ -697,6 +698,11 @@
     }
     .home .list .num {
         font-size: 50px;
+    }
+    .date-list {
+        > div {
+            font-size: 20px;
+        }
     }
 }
 @media (max-width: 394px) {

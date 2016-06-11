@@ -2107,9 +2107,14 @@ textarea.form-control {
     cursor: pointer; }
     .modal-gal-wrap .owl-nav > div.disabled {
       visibility: hidden; }
-  .modal-gal-wrap .owl-prev {
+  .modal-gal-wrap .big-img-gal {
+    position: relative; }
+    .modal-gal-wrap .big-img-gal img {
+      width: 100%;
+      display: block; }
+  .modal-gal-wrap .prev {
     left: -10px; }
-  .modal-gal-wrap .owl-next {
+  .modal-gal-wrap .next {
     right: -10px; }
   .modal-gal-wrap .owl-thumbs {
     margin-top: 5px; }
@@ -2118,8 +2123,6 @@ textarea.form-control {
       padding: 0;
       border: 0;
       border-radius: 0;
-      float: left;
-      width: 25%;
       outline: none;
       opacity: .8;
       cursor: pointer; }
@@ -2134,15 +2137,15 @@ textarea.form-control {
 
 .date-list {
   text-align: right;
-  margin-bottom: 26px; }
+  margin-bottom: 30px; }
   .date-list > div {
     display: inline-block;
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold; }
     .date-list > div a {
       margin: 0 5px;
-      font-size: 18px;
+      font-size: 22px;
       vertical-align: middle; }
 
 @media all and (max-width: 1300px) and (min-width: 1110px) {
@@ -2546,7 +2549,8 @@ textarea.form-control {
   .list-items {
     margin-left: -16px;
     margin-right: -16px; }
-  .mobile-nav, .mobile-nav-wrap {
+  .mobile-nav,
+  .mobile-nav-wrap {
     margin: 0; }
   .title-cat .fill-cat {
     margin-left: -5px;
@@ -2635,7 +2639,9 @@ textarea.form-control {
   .trans-list .item .icons span {
     width: 30px; }
   .home .list .num {
-    font-size: 50px; } }
+    font-size: 50px; }
+  .date-list > div {
+    font-size: 20px; } }
 
 @media (max-width: 394px) {
   .adr-one .list-jobs .title {

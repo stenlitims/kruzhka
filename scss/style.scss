@@ -2528,11 +2528,18 @@ select.form-control {
             visibility: hidden;
         }
     }
-    .owl-prev {
+    .big-img-gal{
+        position: relative;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+    .prev {
         left: -10px;
         .fa {}
     }
-    .owl-next {
+    .next {
         right: -10px;
         .fa {}
     }
@@ -2548,8 +2555,6 @@ select.form-control {
             padding: 0;
             border: 0;
             border-radius: 0;
-            float: left;
-            width: 25%;
             outline: none;
             opacity: .8;
             cursor: pointer;
@@ -2568,15 +2573,15 @@ select.form-control {
 }
 .date-list {
     text-align: right;
-    margin-bottom: 26px;
+    margin-bottom: 30px;
     > div {
         display: inline-block;
         margin-left: 20px;
-        font-size: 18px;
+        font-size: 24px;
         font-weight: bold;
         a {
             margin: 0 5px;
-            font-size: 18px;
+            font-size: 22px;
             vertical-align: middle;
         }
     }

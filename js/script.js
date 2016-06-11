@@ -179,38 +179,60 @@ $(document).ready(function () {
 
     function modalGal() {
 
-        if ($('.modal-gal.owl-carousel').length > 0) {
-            $('.modal-gal').trigger('refresh.owl.carousel');
-            console.log(66655);
+        if ($('.owl-thumbs.owl-carousel').length > 0) {
             return;
         }
-        var owl = $('.modal-gal');
-        owl.owlCarousel({
-            items: 1,
-            thumbs: true,
-            thumbsPrerendered: true,
-            loop: false,
-            // center: true,
-            nav: true,
-            navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
+        var owlT = $('.modal-gal-wrap .owl-thumbs'),
+            $itemT = '.owl-thumbs .owl-thumb-item',
+            $prev = $('.modal-gal-wrap .prev'),
+            $bigImg = $('.big-img-gal img'),
+            $next = $('.modal-gal-wrap .next');
+        $($itemT + ':first-child').addClass('active');
 
+        owlT.owlCarousel({
+            items: 4,
+            loop: false,
+            nav: false,
+            //nav: true,
+            navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
         });
 
-        var $prev = $('.modal-gal .owl-prev'),
-            $next = $('.modal-gal .owl-next');
         $prev.addClass('disabled');
 
-        owl.on('changed.owl.carousel', function (event) {
-            if (event.page.index == 0) {
-                $prev.addClass('disabled');
-            } else {
-                $prev.removeClass('disabled');
-            }
-            if (event.page.index == (event.page.count - 1)) {
+        function setActive($v, $that) {
+            var $cur,
+                oItem = $('.owl-thumbs .owl-item');
+            if ($v == 'next')
+                $cur = $($itemT + '.active').parent().next();
+            if ($v == 'prev')
+                $cur = $($itemT + '.active').parent().prev();
+            if ($that)
+                $cur = $($that).parent();
+            $($itemT).removeClass('active');
+            $cur.children().addClass('active');
+            if (oItem.index($cur) == (oItem.length - 1))
                 $next.addClass('disabled');
-            } else {
+            else
                 $next.removeClass('disabled');
-            }
+
+            if (oItem.index($cur) == 0)
+                $prev.addClass('disabled');
+            else
+                $prev.removeClass('disabled');
+            $bigImg.attr('src', $cur.children().data('img'));
+        }
+
+        $next.on('click', function () {
+            setActive('next');
+            owlT.trigger('next.owl.carousel');
+        });
+        $prev.on('click', function () {
+            setActive('prev');
+            owlT.trigger('prev.owl.carousel');
+        })
+
+        $($itemT).on('click', function () {
+            setActive(false, this);
         });
     }
 
