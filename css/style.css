@@ -2082,6 +2082,69 @@ textarea.form-control {
   border: solid 1px #f4f4f4;
   display: none; }
 
+.open-modal {
+  cursor: pointer; }
+
+.page-inner .list-events {
+  padding-right: 0; }
+
+.left-content .list-events {
+  padding-right: 55px; }
+
+.modal-gal-wrap {
+  margin-bottom: 30px; }
+  .modal-gal-wrap .owl-nav > div {
+    position: absolute;
+    top: 50%;
+    height: 46px;
+    width: 30px;
+    text-align: center;
+    line-height: 46px;
+    color: #fff;
+    font-size: 24px;
+    background: #F48E3B;
+    margin-top: -23px;
+    cursor: pointer; }
+    .modal-gal-wrap .owl-nav > div.disabled {
+      visibility: hidden; }
+  .modal-gal-wrap .owl-prev {
+    left: -10px; }
+  .modal-gal-wrap .owl-next {
+    right: -10px; }
+  .modal-gal-wrap .owl-thumbs {
+    margin-top: 5px; }
+    .modal-gal-wrap .owl-thumbs .owl-thumb-item {
+      background: none;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      float: left;
+      width: 25%;
+      outline: none;
+      opacity: .8;
+      cursor: pointer; }
+      .modal-gal-wrap .owl-thumbs .owl-thumb-item.active {
+        opacity: 1; }
+    .modal-gal-wrap .owl-thumbs img {
+      display: block;
+      width: 100%; }
+
+.m-content {
+  width: 100%; }
+
+.date-list {
+  text-align: right;
+  margin-bottom: 26px; }
+  .date-list > div {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold; }
+    .date-list > div a {
+      margin: 0 5px;
+      font-size: 18px;
+      vertical-align: middle; }
+
 @media all and (max-width: 1300px) and (min-width: 1110px) {
   .home .list .num {
     font-size: 56px; }

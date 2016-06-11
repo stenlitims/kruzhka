@@ -48,7 +48,7 @@ $(document).ready(function () {
         });
     }
     if ($('.js-mobile-nav').length > 0) {
-        $('.mobile-nav-wrap').css('height',  $('.mobile-nav-wrap').height() + 'px');
+        $('.mobile-nav-wrap').css('height', $('.mobile-nav-wrap').height() + 'px');
         $(window).scroll(function () {
             if ($(window).scrollTop() > 89) {
                 $('.js-mobile-nav').addClass('fix');
@@ -113,6 +113,7 @@ $(document).ready(function () {
         e.preventDefault();
         $('html').addClass('o-hidden').css('paddingRight', getScrollBarWidth() + 'px');
         $('.modal-art, .modal-mask').addClass('active');
+        modalGal();
     });
     $(document).on('click', '.modal-art .close, .modal-mask', function (e) {
         e.preventDefault();
@@ -155,6 +156,69 @@ $(document).ready(function () {
     $('.big-img .to-back .btn').on('click', function () {
         $('.big-img').fadeOut(200);
     });
+
+
+
+    /////
+
+
+
+    $('.fill-cat a').on('click', function (e) {
+        e.preventDefault();
+        var $div = $(this).parent().data('div'),
+            $el = $(this).data('target');
+        if ($el != 'all') {
+            $($div + ' > div').hide();
+            $($div + ' [data-id=' + $el + ']').show();
+        } else {
+            $($div + ' > div').show();
+        }
+        $(this).parent().children('a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    function modalGal() {
+
+        if ($('.modal-gal.owl-carousel').length > 0) {
+            $('.modal-gal').trigger('refresh.owl.carousel');
+            console.log(66655);
+            return;
+        }
+        var owl = $('.modal-gal');
+        owl.owlCarousel({
+            items: 1,
+            thumbs: true,
+            thumbsPrerendered: true,
+            loop: false,
+            // center: true,
+            nav: true,
+            navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
+
+        });
+
+        var $prev = $('.modal-gal .owl-prev'),
+            $next = $('.modal-gal .owl-next');
+        $prev.addClass('disabled');
+
+        owl.on('changed.owl.carousel', function (event) {
+            if (event.page.index == 0) {
+                $prev.addClass('disabled');
+            } else {
+                $prev.removeClass('disabled');
+            }
+            if (event.page.index == (event.page.count - 1)) {
+                $next.addClass('disabled');
+            } else {
+                $next.removeClass('disabled');
+            }
+        });
+    }
+
+    if ($('.modal-gal').length > 0) {
+        modalGal();
+    }
+
+
 
 
 
